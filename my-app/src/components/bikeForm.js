@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import FeatherIcon from 'feather-icons-react';
 // import Assets from '../assets/bike.jpeg';
 
-import { db, app } from '../firebaseData'
+// import { db, app } from '../firebaseData'
 
-
+import db from '../firebaseData'
 
 
 function BikeForm() {
