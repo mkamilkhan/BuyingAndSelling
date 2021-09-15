@@ -1,0 +1,261 @@
+
+.desh{
+border: 1px solid green;
+}
+
+.banner{
+width: 100%;
+height: 100vh;
+position: relative;
+overflow: hidden;
+}
+
+.slider{
+width: 100%;
+height: 100vh;
+position: absolute;
+top: 0;
+}
+.slider #slideImage{
+width: 100%;
+height: 100vh;
+}
+.overlay{
+  width: 100%;
+height: 100vh;
+background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+position: absolute;
+top: 0;
+}
+.navbar{
+width: 85%;
+display: flex;
+align-items: center;
+margin: 15% auto;
+}
+
+.content{
+  width: 60%;
+  margin: 60px auto 0;
+  text-align: center;
+  color: rgb(252, 252, 252);
+}
+/* .content p{
+  font-size: 40px;
+} */
+.btn{
+width: 200px;
+padding: 15px 0;
+text-align: center;
+margin: 0 10px;
+border-radius: 25px;
+font-weight: bold;
+border: 2px solid #e4731c;
+background:#e17320 ;
+color: #fff;
+cursor: pointer;
+}
+
+.btn:hover{
+background: transparent;
+border: 2px solid #ffffff;
+}
+.btn1{
+width: 200px;
+padding: 15px 0;
+text-align: center;
+font-weight: bold;
+color: #fff;
+cursor: pointer;
+}
+
+.btn1:hover{
+border-bottom: 2px solid #ffffff;
+}
+.btn-link{
+padding: 15px 0;
+text-align: center;
+font-weight: bold;
+border-bottom: 2px solid #e4731c;
+color: rgb(226, 98, 13);
+cursor: pointer;
+}
+.link-Production{ 
+background: linear-gradient(rgba(245, 244, 244, 0.7),rgba(199, 196, 196, 0.7));
+
+}
+.link-Production .btn-link:hover{ 
+color: rgb(38, 37, 33);
+
+border-bottom: 2px solid #1e1c1f;
+ } 
+ #bgSlide{
+/* background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)); */
+width: 100%;
+height: 100vh;
+position: absolute;
+top: 0;
+
+ }
+
+
+.bgSlide img{
+ width: 300px;
+
+}
+.left-bar{
+  background: linear-gradient(rgba(252, 252, 252, 0.925),rgba(55, 53, 51, 0.945));
+  color: rgb(226, 98, 13);
+  font-weight: bold;
+}
+.left-bar p:hover{
+  border-bottom: 2px solid rgba(219, 106, 13, 0.774);
+color: rgb(65, 59, 56);
+}
+.left-bar p{
+  border-bottom: 1px solid rgba(199, 197, 196, 0.418);
+
+}
+
+
+ .footer{
+
+background: linear-gradient(rgba(9, 9, 9, 0.856),rgba(5, 5, 5, 0.925));
+color: white;
+font-weight: bolder;
+font-size: 12px;
+ }
+ .footer-feather-icon {
+
+width: 15px;
+ }
+ .icon-footer{
+border-top: 2px solid #c7490f;
+
+ }
+
+
+.pri-col{
+background-color: #563d7d;
+color: #fff;
+font-weight: bold;
+}
+.pri{
+  color:  #563d7d;
+}
+.dark{
+color:  #435160;
+}
+.pri-col:hover{
+background-color: #2c203f;
+color: #fff;
+font-weight: bold;
+
+}
+.dark-col{
+  background-color: #343a40 ;
+color: #fff;
+font-weight: bold;
+
+}
+.dark-col:hover{
+  background-color: #4f79a4 ;
+color: #fff;
+
+}
+.info-col{
+  background-color: #18a2b8; 
+color: #fff;
+font-weight: bold;
+}
+.hight-cover{
+height: 670px;
+}
+.bike-img{
+
+ width: 70%;
+ background:linear-gradient(to left, rgba(129, 129, 16, 0.52), rgba(32, 31, 16, 0.863)),
+    url('assets/bike.jpeg');
+
+}
+.car-img{
+ width: 70%;
+ background:linear-gradient(to left, rgba(109, 109, 10, 0.52), rgba(26, 24, 1, 0.918)),
+    url('assets/bmw-sedan.jpeg');
+}
+.mobile-img{
+  /* height: 650px; */
+ width: 80%;
+ background:linear-gradient(to left, rgba(109, 109, 10, 0.52), rgba(26, 24, 1, 0.918)),
+    url('assets/mobile.jpeg');
+    background-repeat: no-repeat;
+}
+.furniture-img{
+  /* height: 650px; */
+ width: 95%;
+ background:linear-gradient(to left, rgba(20, 20, 1, 0.781), rgba(3, 53, 57, 0.918)),
+    url('assets/fur.jpeg');
+    /* background-repeat: no-repeat; */
+}
+.info-bg{
+  background-color: #18a2b8; 
+color: #fff;
+}
+.brd-non{
+border-bottom: 2px solid rgb(218, 209, 205) ;
+outline:none
+}
+.info-col:hover{
+  background-color: #15545e; 
+color: #fff;
+
+}
+.warning-col:hover{
+  background-color: #dfdcd1;
+color: #fff;
+font-weight: bold;
+
+}
+.inf{
+  color: #18a2b8;
+}
+.war-col{
+color: #ffc108;
+font-weight: bold;
+
+}
+.warning-col{
+  background-color: #ffc108;
+color: #fff;
+font-weight: bold;
+
+}
+
+
+ @media (prefers-reduced-motion: no-preference) {
+  .slideImag {
+    animation: slideImag-spin infinite 20s linear;
+  }
+  .banner{
+    animation: banner-flip infinite 30s linear;
+  }
+}
+
+
+
+@keyframes slideImag-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
+@keyframes banner-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
