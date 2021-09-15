@@ -19,7 +19,7 @@ function addProducts() {
                             <span className="dark mx-2">
                                 ADD
                             </span>
-                            YOURS
+                            YOUR
                             <span className="inf mx-2">PRODUCTS </span>
                         </p>
 
