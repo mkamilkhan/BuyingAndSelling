@@ -4,6 +4,7 @@ import Footer from '../components/footer';
 import Assets from '../assets/caro.jpeg';
 import Cart from '../components/cart';
 function allProducts() {
+
     return (
         <div>
             <Header></Header>

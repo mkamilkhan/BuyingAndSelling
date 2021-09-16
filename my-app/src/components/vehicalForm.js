@@ -1,8 +1,53 @@
 import React from 'react'
+import { useState } from 'react'
+
 import { Link } from 'react-router-dom'
 import FeatherIcon from 'feather-icons-react';
 import Assets from '../assets/bike.jpeg';
-function vehicalForm() {
+import { db, app, } from '../firebaseData'
+
+function VehicalForm() {
+
+    const [username, setUsername] = useState('');
+    const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+    const [model, setModel] = useState('');
+    const [engine, setEngine] = useState('');
+    const [bikeName, setBikeName] = useState('');
+    const [color, setColor] = useState('');
+    const [milage, setMilage] = useState('');
+    const [registration, setRegistration] = useState('');
+
+
+
+
+    const save = () => {
+        handledata()
+    }
+    const handledata = () => {
+
+        db.collection("vehicalUser").add({
+            phonenumber: phone,
+            name: username,
+            addres: address,
+            model1: model,
+            engine1: engine,
+            bikeName1: bikeName,
+            color1: color,
+            milage1: milage,
+            registration1: registration,
+            // image1: file
+
+        })
+            .then((resp) => {
+                console.log("working: ", resp);
+            })
+            .catch((error) => {
+                console.error("Error adding document: " + error);
+            });
+
+    }
+
     return (
         <div>
             <div className="h-screen">
@@ -31,22 +76,22 @@ function vehicalForm() {
                             <div className=" font-bold p-2  flex">
 
 
-                                <input className=" text-sm rounded-md border text-gray-600 w-full p-3 font-bold" type="text" placeholder=" UserName:" ></input>
+                                <input value={username} onChange={(e) => setUsername(e.target.value)} className=" text-sm rounded-md border text-gray-600 w-full p-3 font-bold" type="text" placeholder=" UserName:" ></input>
                             </div>
                             <div className="  font-bold p-2 w-full flex">
 
 
-                                <input className="border rounded-md text-sm text-gray-600  w-1/2 p-3 font-bold" type="number" placeholder=" Phone Number:" ></input>
+                                <input value={phone} onChange={(e) => setPhone(e.target.value)} className="border rounded-md text-sm text-gray-600  w-1/2 p-3 font-bold" type="number" placeholder=" Phone Number:" ></input>
 
-                                <input className="border rounded-md text-sm ml-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder=" Address:"></input>
+                                <input value={address} onChange={(e) => setAddress(e.target.value)} className="border rounded-md text-sm ml-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder=" Address:"></input>
                             </div>
 
                             <div className="  font-bold p-2  flex">
 
 
-                                <input className="border rounded-md text-sm  text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Model:"></input>
+                                <input value={model} onChange={(e) => setModel(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Model:"></input>
 
-                                <input className="border rounded-md text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Engine:"></input>
+                                <input value={engine} onChange={(e) => setEngine(e.target.value)} className="border rounded-md text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Engine:"></input>
                             </div>
                             <div className="  font-bold p-2  flex">
 
@@ -56,16 +101,16 @@ function vehicalForm() {
                             <div className="  font-bold p-2 w-full  flex">
 
 
-                                <input className="border rounded-md text-sm  text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="  Car Name:" ></input>
+                                <input value={bikeName} onChange={(e) => setBikeName(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="  Car Name:" ></input>
                                 {/* <input type="file" className="w-1/2 " /> */}
 
                             </div>
                             <div className="  font-bold p-2  flex">
 
 
-                                <input className="border rounded-md text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Capacity:"></input>
+                                <input value={color} onChange={(e) => setColor(e.target.value)} className="border rounded-md text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Color:"></input>
 
-                                <input className="border rounded-md text-sm text-gray-600  w-full p-3 font-bold" type="text" placeholder=" Milage:" ></input>
+                                <input value={milage} onChange={(e) => setMilage(e.target.value)} className="border rounded-md text-sm text-gray-600  w-full p-3 font-bold" type="text" placeholder=" Milage:" ></input>
                             </div>
                             <div className="  font-bold p-2  flex">
 
@@ -75,12 +120,12 @@ function vehicalForm() {
                             <div className="  font-bold p-2   flex">
 
 
-                                <input className="border text-sm  rounded-md text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Registration:"></input>
+                                <input value={registration} onChange={(e) => setRegistration(e.target.value)} className="border text-sm  rounded-md text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Registration:"></input>
 
                             </div>
                             <div className="text-center  ">
 
-                                <button className="info-bg p-3 font-bold info-col rounded-md border w-1/2 ">Save</button>
+                                <button onClick={save} className="info-bg p-3 font-bold info-col rounded-md border w-1/2 ">Save</button>
                             </div>
                         </div>
                     </div>
@@ -91,4 +136,4 @@ function vehicalForm() {
     )
 }
 
-export default vehicalForm
+export default VehicalForm

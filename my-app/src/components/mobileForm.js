@@ -2,7 +2,58 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import FeatherIcon from 'feather-icons-react';
 import Assets from '../assets/bike.jpeg';
-function mobileForm() {
+import { useState } from 'react'
+
+
+
+import { db, app, } from '../firebaseData'
+
+function MobileForm() {
+
+
+    const [username, setUsername] = useState('');
+    const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+    const [model, setModel] = useState('');
+    const [ReleaseDate, setReleaseDate] = useState('');
+    const [price, setPrice] = useState('');
+    const [Os, setOs] = useState('');
+    const [color, setColor] = useState('');
+    const [Cpu, setCpu] = useState('');
+    const [Company, setCompany] = useState('');
+    const [Memory, setMemory] = useState('');
+
+
+
+
+
+    const save = () => {
+        handledata()
+    }
+    const handledata = () => {
+
+        db.collection("mobilUsers").add({
+            phonenumber: phone,
+            name: username,
+            addres: address,
+            Release: ReleaseDate,
+            price1: price,
+            Os1: Os,
+            color1: color,
+            Cpu1: Cpu,
+            Company1: Company,
+            Memory1: Memory,
+            // image1: file
+
+        })
+            .then((resp) => {
+                console.log("working: ", resp);
+            })
+            .catch((error) => {
+                console.error("Error adding document: " + error);
+            });
+
+    }
     return (
 
         <div className="desh">
@@ -32,20 +83,20 @@ function mobileForm() {
                             <div className=" font-bold p-2 w-full  flex">
 
 
-                                <input className=" text-sm border text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="UserName:" ></input>
-                                <input className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="number" placeholder="Phone-Number:" ></input>
+                                <input value={phone} onChange={(e) => setPhone(e.target.value)} className=" text-sm border text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="UserName:" ></input>
+                                <input value={username} onChange={(e) => setUsername(e.target.value)} className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="number" placeholder="Phone-Number:" ></input>
                             </div>
                             <div className="  font-bold p-2 w-full  flex">
 
-                                <input className="border text-sm  text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Address:"></input>
+                                <input value={address} onChange={(e) => setAddress(e.target.value)} className="border text-sm  text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Address:"></input>
 
-                                <input className="border text-sm mx-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Model-Name:"></input>
+                                <input value={model} onChange={(e) => setModel(e.target.value)} className="border text-sm mx-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Model-Name:"></input>
 
                             </div>
                             <div className="  font-bold p-2 full  flex">
 
-                                <input className="border text-sm text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Company:"></input>
-                                <input className="border text-sm mx-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Release-Date:" ></input>
+                                <input value={Company} onChange={(e) => setCompany(e.target.value)} className="border text-sm text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Company:"></input>
+                                <input value={ReleaseDate} onChange={(e) => setReleaseDate(e.target.value)} className="border text-sm mx-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Release-Date:" ></input>
 
                             </div>
 
@@ -53,47 +104,42 @@ function mobileForm() {
                             <div className="  font-bold p-2 w-full  flex">
 
 
-                                <input className="border text-sm text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Price:"></input>
+                                <input value={price} onChange={(e) => setPrice(e.target.value)} className="border text-sm text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Price:"></input>
 
-                                <input className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="text" placeholder="Os:" ></input>
+                                <input value={Os} onChange={(e) => setOs(e.target.value)} className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="text" placeholder="Os:" ></input>
                             </div>
 
                             <div className="  font-bold p-2  flex">
 
 
-                                <input className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Cpu:"></input>
+                                <input value={Cpu} onChange={(e) => setCpu(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Cpu:"></input>
 
                             </div>
                             <div className="  font-bold p-2  flex">
 
 
-                                <input className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Memory:"></input>
+                                <input value={Memory} onChange={(e) => setMemory(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Memory:"></input>
 
                             </div>
+
                             <div className="  font-bold p-2  flex">
 
 
-                                <input className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Sensor:"></input>
-
-                            </div>
-                            <div className="  font-bold p-2  flex">
-
-
-                                <input className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Color:"></input>
+                                <input value={color} onChange={(e) => setColor(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Color:"></input>
 
                             </div>
                             <div className="text-center  ">
 
-                                <button className="info-bg info-col p-3 font-bold rounded-md border w-1/2 ">Save</button>
+                                <button className="info-bg info-col p-3 font-bold rounded-md border w-1/2 " onClick={save}>Save</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </div>
+        </div >
 
     )
 }
 
-export default mobileForm
+export default MobileForm

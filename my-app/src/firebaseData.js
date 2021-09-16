@@ -1,16 +1,15 @@
 
-import firebase from 'firebase/app'
-import 'firebase/firestore'
-
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/storage';
+import 'firebase/compat/firestore';
 const firebaseConfig = {
-    apiKey: "AIzaSyDLZjAabRO49mTQeDHk8X2TTKQp0v8pFbU",
-    authDomain: "ecommerce-e7978.firebaseapp.com",
-    projectId: "ecommerce-e7978",
-    storageBucket: "ecommerce-e7978.appspot.com",
-    messagingSenderId: "68083859410",
-    appId: "1:68083859410:web:b47f92cf8437a1c3d3120b",
-    measurementId: "G-WPFPTBKYBT"
+    authDomain: "buyingandselling-e16cd.firebaseapp.com",
+    projectId: "buyingandselling-e16cd",
+    storageBucket: "buyingandselling-e16cd.appspot.com",
+    messagingSenderId: "983481330166",
+    appId: "1:983481330166:web:cdcadc91f3276df5e93fd7",
+    measurementId: "G-EG4R29QYQL"
 };
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore(app)
-export default db;
+export const app = firebase.initializeApp(firebaseConfig);
+export const db = firebase.firestore(app)
+export const storage = firebase.storage()
