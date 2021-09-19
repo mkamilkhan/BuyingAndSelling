@@ -12,11 +12,14 @@ function VehicalForm() {
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
     const [model, setModel] = useState('');
-    const [engine, setEngine] = useState('');
-    const [bikeName, setBikeName] = useState('');
+    const [fuel, setFuel] = useState('');
+    const [carname, setCarname] = useState('');
     const [color, setColor] = useState('');
-    const [milage, setMilage] = useState('');
+    const [price, setPrice] = useState('');
+    const [make, setMake] = useState('');
     const [registration, setRegistration] = useState('');
+    const [condition, setCondition] = useState('');
+    const [kmdvin, setKmdvin] = useState('');
 
 
 
@@ -26,17 +29,19 @@ function VehicalForm() {
     }
     const handledata = () => {
 
-        db.collection("vehicalUser").add({
+        db.collection("vihicalUser").add({
             phonenumber: phone,
             name: username,
             addres: address,
             model1: model,
-            engine1: engine,
-            bikeName1: bikeName,
+            fuel1: fuel,
+            carname1: carname,
             color1: color,
-            milage1: milage,
+            make1: make,
             registration1: registration,
-            // image1: file
+            price1: price,
+            condition1: condition,
+            kmdvin1: kmdvin,
 
         })
             .then((resp) => {
@@ -76,56 +81,50 @@ function VehicalForm() {
                             <div className=" font-bold p-2  flex">
 
 
-                                <input value={username} onChange={(e) => setUsername(e.target.value)} className=" text-sm rounded-md border text-gray-600 w-full p-3 font-bold" type="text" placeholder=" UserName:" ></input>
+                                <input value={username} onChange={(e) => setUsername(e.target.value)} className=" text-sm rounded-md border text-gray-600 w-full p-4 font-bold" type="text" placeholder=" UserName:" ></input>
                             </div>
                             <div className="  font-bold p-2 w-full flex">
 
 
-                                <input value={phone} onChange={(e) => setPhone(e.target.value)} className="border rounded-md text-sm text-gray-600  w-1/2 p-3 font-bold" type="number" placeholder=" Phone Number:" ></input>
+                                <input value={phone} onChange={(e) => setPhone(e.target.value)} className="border rounded-md text-sm text-gray-600  w-1/2 p-4 font-bold" type="number" placeholder=" Phone Number:" ></input>
 
-                                <input value={address} onChange={(e) => setAddress(e.target.value)} className="border rounded-md text-sm ml-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder=" Address:"></input>
+                                <input value={address} onChange={(e) => setAddress(e.target.value)} className="border rounded-md text-sm ml-1 text-gray-600 w-1/2 p-4 font-bold" type="text" placeholder=" Address:"></input>
                             </div>
 
                             <div className="  font-bold p-2  flex">
 
 
-                                <input value={model} onChange={(e) => setModel(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Model:"></input>
+                                <input value={model} onChange={(e) => setModel(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder=" Model"></input>
 
-                                <input value={engine} onChange={(e) => setEngine(e.target.value)} className="border rounded-md text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Engine:"></input>
+                                <input value={fuel} onChange={(e) => setFuel(e.target.value)} className="border rounded-md text-sm ml-1 text-gray-600 w-full p-4 font-bold" type="text" placeholder="Fuel"></input>
                             </div>
-                            <div className="  font-bold p-2  flex">
 
-
-
-                            </div>
                             <div className="  font-bold p-2 w-full  flex">
 
 
-                                <input value={bikeName} onChange={(e) => setBikeName(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="  Car Name:" ></input>
+                                <input value={carname} onChange={(e) => setCarname(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-1/2 p-4 font-bold" type="text" placeholder="Car name" ></input>
+                                <input value={price} onChange={(e) => setPrice(e.target.value)} className="border rounded-md text-sm ml-1 text-gray-600 w-1/2 p-4 font-bold" type="text" placeholder="Price" ></input>
                                 {/* <input type="file" className="w-1/2 " /> */}
 
                             </div>
                             <div className="  font-bold p-2  flex">
 
 
-                                <input value={color} onChange={(e) => setColor(e.target.value)} className="border rounded-md text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Color:"></input>
-
-                                <input value={milage} onChange={(e) => setMilage(e.target.value)} className="border rounded-md text-sm text-gray-600  w-full p-3 font-bold" type="text" placeholder=" Milage:" ></input>
+                                <input value={kmdvin} onChange={(e) => setKmdvin(e.target.value)} className="border rounded-md text-sm text-gray-600 w-full p-4 font-bold" type="text" placeholder="KM's driven:"></input>
+                                <input value={make} onChange={(e) => setMake(e.target.value)} className="border rounded-md text-sm ml-1 text-gray-600  w-full p-4 font-bold" type="text" placeholder="Make" ></input>
                             </div>
-                            <div className="  font-bold p-2  flex">
 
-
-
-                            </div>
                             <div className="  font-bold p-2   flex">
 
-
-                                <input value={registration} onChange={(e) => setRegistration(e.target.value)} className="border text-sm  rounded-md text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Registration:"></input>
-
+                                <input value={registration} onChange={(e) => setRegistration(e.target.value)} className="border text-sm  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Registered in  "></input>
+                                <input value={condition} onChange={(e) => setCondition(e.target.value)} className="border text-sm ml-1  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Condition"></input>
                             </div>
-                            <div className="text-center  ">
+                            <div className="text-center mt-4 ">
+                                <Link to="/vehicalProducts">
 
-                                <button onClick={save} className="info-bg p-3 font-bold info-col rounded-md border w-1/2 ">Save</button>
+                                    <button onClick={save} className="info-bg p-4 font-bold info-col rounded-md border w-1/2 ">Save</button>
+                                </Link>
+
                             </div>
                         </div>
                     </div>

@@ -12,7 +12,7 @@ function allProducts() {
             <div className=" h-screen">
 
                 <div className="w-full pt-32 shadow-lg flex ">
-                    <div className=" w-1/4  left-bar ">
+                    {/* <div className=" w-1/4  left-bar ">
                         <div className="  ">
                             <div className="  justify-around w-full  ">
                                 <p className="p-6   ">Vehicles</p>
@@ -32,7 +32,7 @@ function allProducts() {
 
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="w-full bgSlide bg-white">
                         <div>
                             <Cart></Cart>

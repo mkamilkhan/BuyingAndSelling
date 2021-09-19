@@ -1,5 +1,5 @@
 import React from 'react'
-import Assets from '../assets/bmw-sedan.jpeg';
+import Assets from '../assets/furni.jpeg';
 import { db, storage } from "../firebaseData"
 import { useState, useEffect } from 'react'
 function FurnitureCarts() {
@@ -26,22 +26,19 @@ function FurnitureCarts() {
                                     <img src={Assets} id="slideImage" className=" rounded"></img>
                                 </div>
                                 <div className="text-xs py-4 p-3 flex-grow rounded font-bold text-gray-700 border shadow-md">
-                                    <div className=" justify-between flex">
-                                        {/* <p>Phone: {user.phonenumber}</p> */}
-                                        {/* <p>name: {user.name}</p> */}
-                                    </div>
 
 
-                                    <div className=" justify-between flex">
-                                        <p>typeOfFurniure1: {user.typeOfFurniure1} </p>
-                                        <p>addres: {user.addres} </p>
+
+                                    <div className=" justify-between ">
+                                        <p className="p-1">TypeOfFurniure: {user.typeOfFurniure1} </p>
+                                        <p className="p-1">Addres: {user.addres} </p>
 
 
+                                        <p className="p-1">TypeOfWood: {user.TypeOfWood1} </p>
                                     </div>
 
                                     {/* <p>Address: {user.addres} </p> */}
-                                    <p>TypeOfWood: {user.TypeOfWood1} </p>
-                                    <p>Textarea: {user.textarea1}</p>
+                                    {/* <p>Textarea: {user.textarea1}</p> */}
 
                                 </div>
                             </div>

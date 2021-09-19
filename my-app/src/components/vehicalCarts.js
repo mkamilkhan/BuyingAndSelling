@@ -2,7 +2,9 @@ import React from 'react'
 import Assets from '../assets/bmw-sedan.jpeg';
 import { db, storage } from "../firebaseData"
 import { useState, useEffect } from 'react'
-function vehicalCarts() {
+import FeatherIcon from 'feather-icons-react';
+import { Link } from 'react-router-dom';
+function VehicalCarts() {
     const [users, setUsers] = useState([]);
     useEffect(() => {
         db.collection('vihicalUser').onSnapshot((resp) => {
@@ -19,26 +21,28 @@ function vehicalCarts() {
                     users.map((user, i) =>
 
                         <div key={i} className="w-64 shadow-md m-3">
-                            <div>
+                            <Link to={`/vehicalDetails/:${user.id}`} exact>
+                                <div className="relative flex justify-end w-full ">
 
-                                <img src={user.image1} id="slideImage" className=" rounded"></img>
-                            </div>
-                            <div className="text-xs py-4 p-3 flex-grow rounded font-bold text-gray-700 border shadow-md">
-                                <div className=" justify-between flex">
-                                    {/* <p>Phone: {user.phonenumber}</p> */}
-                                    <p>Model: {user.model1}</p>
+                                    <img src={Assets} id="slideImage" className=" rounded"></img>
+
+
+                                    <FeatherIcon size="25" className="p-1 mt-1 top-0  mx-2 border rounded-full bg-gray-100 absolute shadow-xl " icon="file-minus" color="rgb(226, 98, 13)" />
                                 </div>
+                            </Link>
+                            <div className="text-xs py-4 p-3 flex-grow rounded font-bold text-gray-700 border shadow-md">
+
 
 
                                 <div className=" justify-between flex">
-                                    <p>Milage: {user.milage1} </p>
+                                    <p>Addres: {user.addres} </p>
 
-                                    <p>Company: {user.bikeName1} </p>
+                                    <p>Price: {user.price1} </p>
 
                                 </div>
 
                                 {/* <p>Address: {user.addres} </p> */}
-                                <p>Color: {user.bikeName1} </p>
+                                <p>Car: {user.carname1} </p>
                                 <p>Registration: {user.registration1}</p>
 
                             </div>
@@ -50,4 +54,4 @@ function vehicalCarts() {
     )
 }
 
-export default vehicalCarts
+export default VehicalCarts

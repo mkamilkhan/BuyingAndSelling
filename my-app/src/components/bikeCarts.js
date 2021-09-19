@@ -1,6 +1,7 @@
 import React from 'react'
-import Assets from '../assets/bmw-sedan.jpeg';
+import Assets from '../assets/bike.jpeg';
 import { db, storage } from "../firebaseData"
+
 import { useState, useEffect } from 'react'
 function BikeCarts() {
     const [users, setUsers] = useState([]);
@@ -14,11 +15,11 @@ function BikeCarts() {
     }, []);
     return (
         <div>
-            <div className="flex flex-wrap" >
+            <div className="flex  flex-wrap" >
                 {
                     users.map((user, i) =>
 
-                        <div key={i} className="w-64 mt-48 mx-2  shadow-md ">
+                        <div key={i} className="w-64 m-3  shadow-md ">
                             <div>
 
                                 <img src={Assets} id="slideImage" className=" rounded"></img>

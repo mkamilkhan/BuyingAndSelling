@@ -103,14 +103,19 @@ function FurnitureForm() {
 
                                 <div className="w-full h-56">
 
+                                    {/* <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="30" className="mr-auto m-2 absolute bg-white rounded-full slideImag shadow-xl p-2 top-0   " /> */}
+                                    {/* <button className="info-bg shadow-2xl info-col p-3 font-bold rounded-md border w-1/2 " onClick={save}>Save</button> */}
                                     <textarea value={textarea} onChange={(e) => setTextarea(e.target.value)} className="border border-gray-300 rounded-md w-full h-48 text-sm text-gray-800 p-2" id="story" name="story" placeholder="Funitures-Details "
                                     >
 
                                     </textarea>
                                 </div>
                                 <div className="text-center  ">
+                                    <Link to="/furnitureProducts">
 
-                                    <button onClick={save} className="info-bg info-col p-3 font-bold rounded-md border w-1/2 ">Save</button>
+                                        <button onClick={save} className="info-bg info-col p-3 font-bold rounded-md border w-1/2 ">Save</button>
+                                    </Link>
+
                                 </div>
                             </div>
                         </div>

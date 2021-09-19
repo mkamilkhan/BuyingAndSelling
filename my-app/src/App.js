@@ -7,8 +7,12 @@ import AddProducts from './pages/addProducts';
 import VehicalForm from './components/vehicalForm';
 import BikeForm from './components/bikeForm';
 import MobileForm from './components/mobileForm';
-import BikeProducts from './pages/bikeProducts';
 import FurnitureForm from './components/furnitureForm';
+import BikeProducts from './pages/bikeProducts';
+import FurnitureProducts from './pages/furnitureProducts';
+import MobileProducts from './pages/mobileProducts'
+import VehicalProducts from './pages/vehicalProducts'
+import VehicalDetails from './components/vehicalDetails';
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,7 +20,7 @@ import {
   Redirect,
   Link
 } from "react-router-dom";
-import FurnitureProducts from './pages/furnitureProducts';
+
 function App() {
   return (
     <div>
@@ -42,19 +46,37 @@ function App() {
                 <BikeProducts />
 
               </Route>
+              <Route path={"/furnitureProducts"} component={FurnitureProducts}>
+                <FurnitureProducts />
+
+              </Route>
+              <Route path={"/mobileProducts"} component={MobileProducts}>
+                <MobileProducts />
+
+              </Route>
+              <Route path={"/vehicalProducts"} component={VehicalProducts}>
+                < VehicalProducts />
+
+              </Route>
+              <Route path={"/vehicalDetails/:id"} component={VehicalDetails}>
+                < VehicalDetails />
+
+              </Route>
               {/* <AddProducts></AddProducts> */}
               {/* <Home></Home> */}
               {/* <BikeProducts ></BikeProducts> */}
-              <FurnitureProducts></FurnitureProducts>
-              {/* <AddProducts></AddProducts> */}
+              {/* <FurnitureProducts></FurnitureProducts> */}
+              <AddProducts></AddProducts>
+              {/* <VehicalDetails></VehicalDetails> */}
               {/* <AllProducts></AllProducts> */}
+              {/* <VehicalProducts></VehicalProducts> */}
             </Switch>
 
           </div>
         </Router>
 
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 

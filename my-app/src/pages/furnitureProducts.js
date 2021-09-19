@@ -1,14 +1,22 @@
 import React from 'react'
 import Header from '../components/header'
-// import FurnitureCart from '../components/furnitureCart'
+import SideBar from '../components/sideBar';
+// import BikeCarts from '../components/bikeCarts'
 import FurnitureCarts from '../components/furnitureCarts'
+
 function FurnitureProducts() {
     return (
         <div>
-            {/* <Header /> */}
             <div>
-                <div className="m-12">
-                    <FurnitureCarts />
+                <Header />
+                <div className="flex w-full">
+
+                    <div className="w-64">
+                        <SideBar />
+                    </div>
+                    <div className="mt-24">
+                        <FurnitureCarts />
+                    </div>
                 </div>
             </div>
         </div>

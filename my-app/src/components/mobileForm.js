@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import FeatherIcon from 'feather-icons-react';
-import Assets from '../assets/bike.jpeg';
+// import Assets from '../assets/mobile.jpeg';
 import { useState } from 'react'
 
 
@@ -125,12 +125,17 @@ function MobileForm() {
                             <div className="  font-bold p-2  flex">
 
 
-                                <input value={color} onChange={(e) => setColor(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Color:"></input>
 
+                                <input value={color} onChange={(e) => setColor(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Color:"></input>
                             </div>
                             <div className="text-center  ">
 
-                                <button className="info-bg info-col p-3 font-bold rounded-md border w-1/2 " onClick={save}>Save</button>
+                                <Link to="/mobileProducts">
+                                    <button className="info-bg info-col p-3 font-bold rounded-md border w-1/2 " onClick={save}>Save</button>
+
+
+                                </Link>
+
                             </div>
                         </div>
                     </div>

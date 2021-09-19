@@ -1,11 +1,11 @@
 import React from 'react'
-import Assets from '../assets/bmw-sedan.jpeg';
+import Assets from '../assets/mobile.jpeg';
 import { db, storage } from "../firebaseData"
 import { useState, useEffect } from 'react'
-function mobileCarts() {
+function MobileCarts() {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        db.collection('mobileUser').onSnapshot((resp) => {
+        db.collection('mobilUsers').onSnapshot((resp) => {
 
             const list = resp.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             setUsers(list);
@@ -21,25 +21,37 @@ function mobileCarts() {
                         <div key={i} className="w-64 shadow-md m-3">
                             <div>
 
-                                <img src={user.image1} id="slideImage" className=" rounded"></img>
+                                <img src={Assets} id="slideImage" className=" rounded"></img>
                             </div>
                             <div className="text-xs py-4 p-3 flex-grow rounded font-bold text-gray-700 border shadow-md">
                                 <div className=" justify-between flex">
                                     {/* <p>Phone: {user.phonenumber}</p> */}
-                                    <p>Model: {user.model1}</p>
+                                    {/* <p>Model: {user.model1}</p> */}
                                 </div>
 
 
                                 <div className=" justify-between flex">
-                                    <p>Milage: {user.milage1} </p>
+                                    {/* <p>model: {user.model} </p> */}
 
-                                    <p>Company: {user.bikeName1} </p>
+                                    <p>ReleaseDate: {user.Release} </p>
+
+                                    <p>color: {user.price1} </p>
+                                </div>
+                                <div className=" justify-between flex">
+
+                                    <p>price: {user.Os1} </p>
+
+                                </div>
+                                <div className=" justify-between flex">
+                                    <p>Os: {user.color1} </p>
+
+                                    <p>Cpu: {user.Cpu1} </p>
 
                                 </div>
 
                                 {/* <p>Address: {user.addres} </p> */}
-                                <p>Color: {user.bikeName1} </p>
-                                <p>Registration: {user.registration1}</p>
+                                <p>Company: {user.Company1} </p>
+                                <p>Memory: {user.Memory1}</p>
 
                             </div>
                         </div>
@@ -50,4 +62,4 @@ function mobileCarts() {
     )
 }
 
-export default mobileCarts
+export default MobileCarts

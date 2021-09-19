@@ -1,9 +1,16 @@
 // import React from 'react'
 import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import FeatherIcon from 'feather-icons-react';
+// import { Link } from 'react-router-dom'
 
+import FeatherIcon from 'feather-icons-react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+    Link
+} from "react-router-dom";
 import { db, app, } from '../firebaseData'
 
 
@@ -125,11 +132,12 @@ function BikeForm() {
 
                             </div>
                             <div className="text-center  ">
-                                {/* <Link to="/allProducts"> */}
 
-                                {/* <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="30" className="mr-auto m-2 absolute bg-white rounded-full slideImag shadow-xl p-2 top-0   " /> */}
-                                <button className="info-bg shadow-2xl info-col p-3 font-bold rounded-md border w-1/2 " onClick={save}>Save</button>
-                                {/* </Link> */}
+                                <Link to="/bikeProducts">
+
+                                    {/* <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="30" className="mr-auto m-2 absolute bg-white rounded-full slideImag shadow-xl p-2 top-0   " /> */}
+                                    <button className="info-bg shadow-2xl info-col p-3 font-bold rounded-md border w-1/2 " onClick={save}>Save</button>
+                                </Link>
                                 {/* {error} */}
                             </div>
                             <input value={file} onChange={(e) => setFile(e.target.value)} className="p-3 border font-bold rounded-md border w-1/2 " ></input>
