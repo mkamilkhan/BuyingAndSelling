@@ -2,20 +2,19 @@ import React from 'react'
 import BikeCarts from '../components/bikeCarts'
 import Header from '../components/header'
 import SideBar from '../components/sideBar';
+import SearcHeader from '../components/searcHeader';
+
 function BikeProducts() {
     return (
         <div>
             <div>
 
-                <Header />
+                <div>
 
-
-                <div className="flex w-full">
-
-                    <div className="w-64">
+                    <div>
                         <SideBar />
                     </div>
-                    <div className="mt-32">
+                    <div>
                         <BikeCarts />
                     </div>
                 </div>

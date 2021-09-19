@@ -1,16 +1,16 @@
 import React from 'react'
-import Assets from '../assets/bmw-sedan.jpeg';
+import Assets from '../assets/bike.jpeg';
+
 import { db, storage } from "../firebaseData"
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-
-function VehicalDetails() {
+function BikeDetails() {
     const { id } = useParams();
 
     const [users, setUsers] = useState([]);
     useEffect(() => {
 
-        db.collection('vihicalUser').onSnapshot((resp) => {
+        db.collection('bikeUser').onSnapshot((resp) => {
             console.log(resp, "userss")
             const list = resp.docs.map((doc) => ({ ...doc.data([]), id: doc.id }));
             setUsers(list);
@@ -90,7 +90,7 @@ function VehicalDetails() {
                                     <div className=" w-1/2 justify-between  flex">
                                         <p>
                                             Model</p>
-                                        <p>{user.model1}</p>
+                                        <p>{user.bikeName1}</p>
                                     </div>
                                     <div className="w-1/6"></div>
                                     <div className="flex w-1/2 justify-between">
@@ -124,8 +124,8 @@ function VehicalDetails() {
 
 
             </div>
-        </div >
+        </div>
     )
 }
 
-export default VehicalDetails
+export default BikeDetails

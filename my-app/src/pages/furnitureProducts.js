@@ -3,18 +3,20 @@ import Header from '../components/header'
 import SideBar from '../components/sideBar';
 // import BikeCarts from '../components/bikeCarts'
 import FurnitureCarts from '../components/furnitureCarts'
+import SearcHeader from '../components/searcHeader';
 
 function FurnitureProducts() {
     return (
         <div>
             <div>
-                <Header />
-                <div className="flex w-full">
 
-                    <div className="w-64">
+
+                <div >
+
+                    <div >
                         <SideBar />
                     </div>
-                    <div className="mt-24">
+                    <div className="">
                         <FurnitureCarts />
                     </div>
                 </div>

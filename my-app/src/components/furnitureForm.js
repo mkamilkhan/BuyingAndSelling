@@ -31,10 +31,10 @@ function FurnitureForm() {
             name: username,
             addres: address,
             typeOfFurniure1: typeOfFurniure,
-            TypeOfWood1: TypeOfWood,
-            color1: color,
-            price1: price,
-            textarea1: textarea,
+            TypeOfWood: TypeOfWood,
+            color: color,
+            price: price,
+            textarea: textarea,
 
 
         })

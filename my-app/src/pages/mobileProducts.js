@@ -2,18 +2,18 @@ import React from 'react'
 import Header from '../components/header'
 import MobileCarts from '../components/mobileCarts'
 import SideBar from '../components/sideBar';
-
+import SearcHeader from '../components/searcHeader';
 function MobileProducts() {
     return (
         <div>
             <div>
-                <Header />
-                <div className="flex w-full">
+                {/* <Header /> */}
+                <div className="">
 
-                    <div className="w-64">
+                    <div className="">
                         <SideBar />
                     </div>
-                    <div className="mt-32">
+                    <div className="">
                         <MobileCarts />
                     </div>
                 </div>

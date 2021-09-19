@@ -23,9 +23,13 @@ function BikeForm() {
     const [engine, setEngine] = useState('');
     const [bikeName, setBikeName] = useState('');
     const [color, setColor] = useState('');
-    const [milage, setMilage] = useState('');
+    const [kmdvin, setKmdvin] = useState('');
     const [registration, setRegistration] = useState('');
-    const [file, setFile] = useState('');
+    const [condition, setCondition] = useState('');
+    const [fuel, setFuel] = useState('');
+    const [price, setPrice] = useState('');
+    // const [file, setFile] = useState('');
+    const [make, setMake] = useState('');
 
 
 
@@ -41,11 +45,15 @@ function BikeForm() {
             addres: address,
             model1: model,
             engine1: engine,
+            make1: make,
+
             bikeName1: bikeName,
             color1: color,
-            milage1: milage,
+            kmdvin1: kmdvin,
             registration1: registration,
-            image1: file
+            condition1: condition,
+            price1: price,
+            fuel1: fuel,
 
         })
             .then((resp) => {
@@ -99,31 +107,35 @@ function BikeForm() {
 
 
                                 <input value={model} onChange={(e) => setModel(e.target.value)} className="border text-sm  text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Model:"></input>
+                                <input value={fuel} onChange={(e) => setFuel(e.target.value)} className="border text-sm ml-1 text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Fuel:"></input>
 
                             </div>
                             <div className="  font-bold p-2  flex">
 
 
                                 <input value={engine} onChange={(e) => setEngine(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Engine:"></input>
+                                <input value={price} onChange={(e) => setPrice(e.target.value)} className="border text-sm ml-1 text-gray-600 w-full p-3 font-bold" type="text" placeholder="Price"></input>
+
+                            </div>
+                            <div className="  font-bold p-2  flex">
+
+                                <input value={make} onChange={(e) => setMake(e.target.value)} className="border rounded-md text-sm ml-1 text-gray-600  w-full p-4 font-bold" type="text" placeholder="Make" ></input>
+
+                                <input value={bikeName} onChange={(e) => setBikeName(e.target.value)} className="border ml-1  text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Bike Name" ></input>
 
                             </div>
                             <div className="  font-bold p-2  flex">
 
 
-                                <input value={bikeName} onChange={(e) => setBikeName(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Bike Name:" ></input>
+                                <input value={color} onChange={(e) => setColor(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Color"></input>
 
                             </div>
                             <div className="  font-bold p-2  flex">
 
 
-                                <input value={color} onChange={(e) => setColor(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Color:"></input>
+                                <input value={kmdvin} onChange={(e) => setKmdvin(e.target.value)} className="border text-sm text-gray-600  w-full p-3 font-bold" type="text" placeholder=" KM's driven" ></input>
 
-                            </div>
-                            <div className="  font-bold p-2  flex">
-
-
-                                <input value={milage} onChange={(e) => setMilage(e.target.value)} className="border text-sm text-gray-600  w-full p-3 font-bold" type="text" placeholder=" Milage:" ></input>
-
+                                <input value={condition} onChange={(e) => setCondition(e.target.value)} className="border ml-1 text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Condition"></input>
                             </div>
                             <div className="  font-bold p-2  flex">
 
@@ -140,7 +152,7 @@ function BikeForm() {
                                 </Link>
                                 {/* {error} */}
                             </div>
-                            <input value={file} onChange={(e) => setFile(e.target.value)} className="p-3 border font-bold rounded-md border w-1/2 " ></input>
+                            {/* <input value={file} onChange={(e) => setFile(e.target.value)} className="p-3 border font-bold rounded-md border w-1/2 " ></input> */}
                         </div>
                     </div>
                 </div>

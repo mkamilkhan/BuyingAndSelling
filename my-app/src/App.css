@@ -157,12 +157,31 @@ font-weight: bold;
 color: #fff;
 font-weight: bold;
 
-}
-.dark-col:hover{
+}.dark-col:hover{
   background-color: #4f79a4 ;
 color: #fff;
 
 }
+.dark-cols{
+  background-color: #343a40 ;
+color: #fff;
+font-weight: bold;
+
+}
+.darks-cols{
+   background-color: #3f4346 ;
+
+color: #fff;
+font-weight: bold;
+
+}
+.darks-cols:hover{
+color: #fff;
+font-weight: bold;
+   background-color: #262a2d ;
+
+}
+
 .info-col{
   background-color: #18a2b8; 
 color: #fff;

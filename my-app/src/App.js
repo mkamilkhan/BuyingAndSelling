@@ -13,6 +13,7 @@ import FurnitureProducts from './pages/furnitureProducts';
 import MobileProducts from './pages/mobileProducts'
 import VehicalProducts from './pages/vehicalProducts'
 import VehicalDetails from './components/vehicalDetails';
+import BikeDetails from './components/bikeDetails';
 import {
   BrowserRouter as Router,
   Switch,
@@ -60,6 +61,10 @@ function App() {
               </Route>
               <Route path={"/vehicalDetails/:id"} component={VehicalDetails}>
                 < VehicalDetails />
+
+              </Route>
+              <Route path={"/bikeDetails/:id"} component={BikeDetails}>
+                < BikeDetails />
 
               </Route>
               {/* <AddProducts></AddProducts> */}
