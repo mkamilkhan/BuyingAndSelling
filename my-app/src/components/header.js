@@ -2,6 +2,7 @@ import React from 'react'
 
 import Logo from '../assets/rr.png';
 
+import { Link } from 'react-router-dom';
 
 export default function header() {
 
@@ -27,11 +28,16 @@ export default function header() {
 
                         <p className="text-white  btn1" >HOME</p>
                     </a>
-                    <a href="#opening">
-                        <p className="text-white  btn1 mx-2" >PRODUCT</p>
 
-                    </a>
-                    <p className="text-white btn1 mx-2" >SELL</p>
+                    <Link to="/allProducts">
+
+                        <p className="text-white  btn1 mx-2" >AllProducts</p>
+                    </Link>
+
+                    <Link to="/addProducts">
+
+                        <p className="text-white btn1 mx-2" >SELL</p>
+                    </Link>
 
                 </div>
             </div>

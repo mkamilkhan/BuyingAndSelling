@@ -158,18 +158,18 @@ color: #fff;
 font-weight: bold;
 
 }.dark-col:hover{
-  background-color: #4f79a4 ;
+  background-color: #191e2291 ;
 color: #fff;
 
 }
 .dark-cols{
-  background-color: #343a40 ;
-color: #fff;
+  background-color: #d378081c ;
+color: rgb(230, 152, 18);
 font-weight: bold;
 
 }
 .darks-cols{
-   background-color: #3f4346 ;
+   background-color: #d37808 ;
 
 color: #fff;
 font-weight: bold;
@@ -178,7 +178,7 @@ font-weight: bold;
 .darks-cols:hover{
 color: #fff;
 font-weight: bold;
-   background-color: #262a2d ;
+   background-color: #4b2f04fc ;
 
 }
 

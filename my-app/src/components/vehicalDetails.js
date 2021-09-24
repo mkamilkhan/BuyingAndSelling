@@ -3,7 +3,14 @@ import Assets from '../assets/bmw-sedan.jpeg';
 import { db, storage } from "../firebaseData"
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
+import FeatherIcon from 'feather-icons-react';
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 function VehicalDetails() {
     const { id } = useParams();
 
@@ -18,111 +25,106 @@ function VehicalDetails() {
         })
     }, []);
     return (
-        <div>
+        <div className="bg-gray-100">
             <div className="">
                 <div>
-                    {/* <p>CAR DETAILS</p> */}
+                    <Link to="/vehicalProducts">
+
+                        <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="50" className=" m-12  absolute bg-white rounded-full shadow-xl p-2 top-0   " />
+                    </Link>
                 </div>
                 {
                     users.map((user, i) => (`:${user.id}` === id ?
 
 
                         <div >
-                            <div key={i} className=" flex w-3/4 ml-48 mt-24 ">
+                            <div key={i} className=" flex w-3/4 ml-48 pt-24 ">
 
                                 <div className="w-3/4 ">
-                                    <img src={Assets} id="slideImage" className=" rounded"></img>
+                                    <img src={user.image} id="slideImage" className=" rounded w-full h-full"></img>
 
                                 </div>
-                                <div className="w-1/4 font-normal text-gray-700 ">
-                                    <div className="p-3 border rounded border-gray-300 rounded h-64">
+                                <div className="w-1/4 bg-white font-normal text-gray-700 ">
+                                    <div className="p-3  rounded h-64">
 
-                                        <p className="font-bold text-gray-800 text-3xl">Rs. {user.price1}</p>
+                                        <p className="font-bold text-yellow-600 text-3xl">Rs. {user.price}</p>
 
-                                        <p>{user.model1}- {user.kmdvin1}Km</p>
-                                        <p>{user.carname1} </p>
+                                        <p className="my-1">{user.model}- {user.kmdvin}Km</p>
+                                        <p>{user.carname} </p>
+                                        <p>{user.addres} </p>
 
                                     </div>
-                                    <div className="p-3 rounded border border-gray-300 h-64">
-                                        <p className="font-bold m-2 text-gray-800 text-2xl">Seller Information</p>
-                                        <div className="m-2 text-sm">
+                                    <div className="p-3  h-64">
+                                        <p className="font-bold  text-yellow-600 text-2xl">Seller Information</p>
+                                        <div className=" my-1 text-sm">
 
                                             <p>Name: {user.name}</p>
 
-                                            <p>Contect: {user.phonenumber}</p>
+                                            <p className="my-1 ">Contect: {user.phonenumber}</p>
                                             <p>Address" {user.addres} </p>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
-                            <div className="mx-48 my-8 p-6 border border-gray-300 rounded">
-                                <div className=" w-full  p-1 flex">
+                            <div className="mx-48 mt-8 p-6 bg-white rounded">
+                                <div className=" w-full  p-4 border flex">
 
                                     <div className=" w-1/2 justify-between  flex">
-                                        <p>Year</p>
-                                        <p>{user.model1}</p>
+                                        <p className="font-bold text-yellow-600">Year</p>
+                                        <p>{user.model}</p>
                                     </div>
                                     <div className="w-1/6"></div>
 
                                     <div className="flex w-1/2 justify-between">
-                                        <p>
+                                        <p className="font-bold text-yellow-600">
                                             KM's driven</p>
-                                        <p>{user.kmdvin1}</p>
+                                        <p>{user.kmdvin}</p>
                                     </div>
                                 </div>
-                                <div className=" w-full p-1  flex">
+                                <div className=" w-full p-4 border flex">
 
                                     <div className=" w-1/2 justify-between  flex">
-                                        <p>Price</p>
-                                        <p>{user.price1}</p>
+                                        <p className="font-bold text-yellow-600">Price</p>
+                                        <p>{user.price}</p>
                                     </div>
                                     <div className="w-1/6"></div>
 
                                     <div className="flex w-1/2 justify-between">
-                                        <p>
-                                            Make</p>
-                                        <p>{user.make1}</p>
-                                    </div>
-                                </div>
-                                <div className=" w-full p-1  flex">
 
-                                    <div className=" w-1/2 justify-between  flex">
-                                        <p>
+                                        <p className="font-bold text-yellow-600">
                                             Model</p>
-                                        <p>{user.model1}</p>
-                                    </div>
-                                    <div className="w-1/6"></div>
-                                    <div className="flex w-1/2 justify-between">
-                                        <p>Fuel</p>
-                                        <p>{user.fuel1}</p>
+                                        <p>{user.carname}</p>
                                     </div>
                                 </div>
-                                <div className=" w-full p-1  flex">
+                                <div className=" w-full p-4 border   flex">
 
                                     <div className=" w-1/2 justify-between  flex">
 
-                                        <p>Registered in</p>
+                                        <p className="font-bold text-yellow-600">Registered in</p>
 
-                                        <p>{user.registration1}</p>
+                                        <p>{user.registration}</p>
+
                                     </div>
                                     <div className="w-1/6"></div>
-
                                     <div className="flex w-1/2 justify-between">
-                                        <p>Condition</p>
-                                        <p>{user.condition1}</p>
+                                        <p className="font-bold text-yellow-600">Fuel</p>
+                                        <p>{user.fuel}</p>
                                     </div>
                                 </div>
-
-
-
+                                <div className=" w-full p-4 border">
+                                    <div className="flex  justify-between w-1/2">
+                                        <p className="font-bold text-yellow-600">Condition</p>
+                                        <p className="mr-16">{user.condition}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p className="font-bold text-yellow-600 ml-4 m-4">Details:</p>
+                                    <p className="w-full  p-3">{user.details}</p>
+                                </div>
                             </div>
-
-
                         </div> : ""
                     ))}
-
-
             </div>
         </div >
     )

@@ -23,13 +23,12 @@ function BikeForm() {
     const [engine, setEngine] = useState('');
     const [bikeName, setBikeName] = useState('');
     const [color, setColor] = useState('');
-    const [kmdvin, setKmdvin] = useState('');
     const [registration, setRegistration] = useState('');
     const [condition, setCondition] = useState('');
-    const [fuel, setFuel] = useState('');
     const [price, setPrice] = useState('');
-    // const [file, setFile] = useState('');
-    const [make, setMake] = useState('');
+    const [details, setDetails] = useState('');
+    const [image, setImage] = useState('');
+
 
 
 
@@ -43,17 +42,15 @@ function BikeForm() {
             phonenumber: phone,
             name: username,
             addres: address,
-            model1: model,
-            engine1: engine,
-            make1: make,
-
-            bikeName1: bikeName,
-            color1: color,
-            kmdvin1: kmdvin,
-            registration1: registration,
-            condition1: condition,
-            price1: price,
-            fuel1: fuel,
+            model: model,
+            engine: engine,
+            bikeName: bikeName,
+            color: color,
+            registration: registration,
+            condition: condition,
+            price: price,
+            details: details,
+            image: image,
 
         })
             .then((resp) => {
@@ -62,9 +59,7 @@ function BikeForm() {
             .catch((error) => {
                 console.error("Error adding document: " + error);
             });
-
     }
-
     return (
         <div>
             <div className="h-screen">
@@ -106,51 +101,91 @@ function BikeForm() {
                             <div className="  font-bold p-2  flex">
 
 
-                                <input value={model} onChange={(e) => setModel(e.target.value)} className="border text-sm  text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Model:"></input>
-                                <input value={fuel} onChange={(e) => setFuel(e.target.value)} className="border text-sm ml-1 text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Fuel:"></input>
+                                <select value={condition} onChange={(e) => setCondition(e.target.value)} className="border text-sm ml-1  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Condition">
+                                    <option>condition</option>
+                                    <option>Used</option>
+                                    <option>New</option>
+
+                                </select>
+                                {/* <input value={condition} onChange={(e) => setCondition(e.target.value)} className="border ml-1 text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Condition"></input> */}
+
+                                <select value={bikeName} onChange={(e) => setBikeName(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="Car name" >
+                                    <option>bikeName</option>
+                                    <option>Honda CB 125F</option>
+                                    <option>Honda CD 70</option>
+                                    <option>Benelli TNT 150i </option>
+                                    <option>Honda CG 125</option>
+                                    <option>Unique</option>
+                                    <option> Hero</option>
+                                    <option>Suzuki</option>
+                                    <option>RIVO</option>
+
+                                </select>
 
                             </div>
                             <div className="  font-bold p-2  flex">
+                                <select value={engine} onChange={(e) => setEngine(e.target.value)} className="border text-sm ml-1  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Condition">
+                                    <option>Engine</option>
+                                    <option>70</option>
+                                    <option>100</option>
+                                    <option>125</option>
+                                    <option>150</option>
+                                    <option>200</option>
 
+                                </select>
 
-                                <input value={engine} onChange={(e) => setEngine(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Engine:"></input>
+                                {/* <input value={engine} onChange={(e) => setEngine(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Engine:"></input> */}
                                 <input value={price} onChange={(e) => setPrice(e.target.value)} className="border text-sm ml-1 text-gray-600 w-full p-3 font-bold" type="text" placeholder="Price"></input>
 
                             </div>
+
+
+
                             <div className="  font-bold p-2  flex">
 
-                                <input value={make} onChange={(e) => setMake(e.target.value)} className="border rounded-md text-sm ml-1 text-gray-600  w-full p-4 font-bold" type="text" placeholder="Make" ></input>
+                                <select value={registration} onChange={(e) => setRegistration(e.target.value)} className="border text-sm  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Registered in ">
+                                    <option>registration</option>
+                                    <option>Abbottabad</option>
+                                    <option>Swabi</option>
+                                    <option>Swat</option>
+                                    <option>Malakand</option>
+                                    <option>Kohat</option>
+                                    <option>Khyber</option>
+                                    <option>Haripur	</option>
+                                    <option> Buner</option>
+                                    <option>Attock</option>
+                                    <option>Bahawalpur</option>
+                                    <option>Faisalabad</option>
+                                    <option>Multan</option>
+                                    <option>Okara</option>
+                                    <option>Rawalpindi</option>
+                                    <option>Sialkot</option>
+                                    <option>Texila</option>
+                                    <option>Peshawar</option>
+                                    <option>Nowshera</option>
+                                    <option>Jahangira</option>
+                                    <option>Mardan</option>
+                                    <option>Karak</option>
+                                    <option>Kalam</option>
+                                    <option>Peshawar</option>
 
-                                <input value={bikeName} onChange={(e) => setBikeName(e.target.value)} className="border ml-1  text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Bike Name" ></input>
+
+                                </select>
+                                {/* <input value={registration} onChange={(e) => setRegistration(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Registration:"></input> */}
 
                             </div>
                             <div className="  font-bold p-2  flex">
-
-
-                                <input value={color} onChange={(e) => setColor(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder=" Color"></input>
-
+                                <textarea value={details} onChange={(e) => setDetails(e.target.value)} className="border text-sm  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Details " className="border w-full p-2 text-sm h-32"></textarea>
                             </div>
-                            <div className="  font-bold p-2  flex">
-
-
-                                <input value={kmdvin} onChange={(e) => setKmdvin(e.target.value)} className="border text-sm text-gray-600  w-full p-3 font-bold" type="text" placeholder=" KM's driven" ></input>
-
-                                <input value={condition} onChange={(e) => setCondition(e.target.value)} className="border ml-1 text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Condition"></input>
-                            </div>
-                            <div className="  font-bold p-2  flex">
-
-
-                                <input value={registration} onChange={(e) => setRegistration(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Registration:"></input>
-
-                            </div>
-                            <div className="text-center  ">
+                            <div className="text-center my-2 ">
 
                                 <Link to="/bikeProducts">
 
-                                    {/* <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="30" className="mr-auto m-2 absolute bg-white rounded-full slideImag shadow-xl p-2 top-0   " /> */}
                                     <button className="info-bg shadow-2xl info-col p-3 font-bold rounded-md border w-1/2 " onClick={save}>Save</button>
                                 </Link>
                                 {/* {error} */}
+                                <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-4" placeholder="Image"></input>
+
                             </div>
                             {/* <input value={file} onChange={(e) => setFile(e.target.value)} className="p-3 border font-bold rounded-md border w-1/2 " ></input> */}
                         </div>

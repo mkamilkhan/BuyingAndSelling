@@ -1,17 +1,17 @@
 import React from 'react'
-import Assets from '../assets/bike.jpeg';
-import FeatherIcon from 'feather-icons-react';
+import Assets from '../assets/mobile.jpeg';
 import { Link } from 'react-router-dom'
+import FeatherIcon from 'feather-icons-react';
 import { db, storage } from "../firebaseData"
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-function BikeDetails() {
+function MobileDetails() {
     const { id } = useParams();
 
     const [users, setUsers] = useState([]);
     useEffect(() => {
 
-        db.collection('bikeUser').onSnapshot((resp) => {
+        db.collection('mobilUsers').onSnapshot((resp) => {
             console.log(resp, "userss")
             const list = resp.docs.map((doc) => ({ ...doc.data([]), id: doc.id }));
             setUsers(list);
@@ -22,7 +22,7 @@ function BikeDetails() {
         <div className="bg-gray-100">
             <div className="">
                 <div>
-                    <Link to="/bikeProducts">
+                    <Link to="/mobileProducts">
 
                         <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="50" className=" m-12  absolute bg-white rounded-full shadow-xl p-2 top-0   " />
                     </Link>
@@ -34,7 +34,7 @@ function BikeDetails() {
                         <div >
                             <div key={i} className=" flex w-3/4 ml-48 pt-24 ">
 
-                                <div className="w-3/4 ">
+                                <div className="w-3/4  ">
                                     <img src={user.image} id="slideImage" className=" rounded w-full h-full"></img>
 
                                 </div>
@@ -43,33 +43,34 @@ function BikeDetails() {
 
                                         <p className="font-bold my-2 text-yellow-600 text-3xl">Rs. {user.price}</p>
 
-                                        <p className="font-bold">{user.bikeName} </p>
+                                        <p className="my-1">{user.model}</p>
+                                        <p>{user.phonenumber} </p>
 
                                     </div>
-                                    <div className="rounded  h-64">
+                                    <div className="rounded bg-white h-64">
                                         <p className="font-bold m-2 text-yellow-600 text-2xl">Seller Information</p>
                                         <div className="m-2 text-sm">
 
-                                            <p className="my-1 font-bold ">Name: {user.name}</p>
+                                            <p className="my-1">Name: {user.name}</p>
 
-                                            <p className="my-1 font-bold">Contect: {user.phonenumber}</p>
-                                            <p className="font-bold">Address" {user.addres} </p>
+                                            <p className="my-1">Contect: {user.phonenumber}</p>
+                                            <p>Address" {user.addres} </p>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
-                            <div className="mx-48 mt-8 bg-white p-6 border border-gray-300 rounded">
-                                <div className=" w-full border  p-4 flex">
+                            <div className="mx-48 my-8 p-6 bg-white rounded">
+                                <div className=" w-full border p-4 flex">
 
                                     <div className=" w-1/2 justify-between  flex">
-                                        <p className="font-bold text-yellow-600">Condition</p>
-                                        <p>{user.condition}</p>
+                                        <p className="font-bold text-yellow-600">Release</p>
+                                        <p>{user.release}</p>
                                     </div>
 
 
-                                    <div className=" w-1/2 justify-between  flex">
-                                        <p className="font-bold mx-8 text-yellow-600" >Price</p>
+                                    <div className=" w-1/2  justify-between  flex">
+                                        <p className="font-bold mx-6  text-yellow-600">Price</p>
                                         <p>{user.price}</p>
                                     </div>
 
@@ -77,22 +78,30 @@ function BikeDetails() {
 
                                 <div className=" w-full p-4 border flex">
 
-                                    <div className=" w-1/2 justify-between  flex">
+                                    <div className=" w-1/2 justify-between  xs flex">
                                         <p className="font-bold text-yellow-600">
-                                            BIKE</p>
-                                        <p>{user.bikeName}</p>
+                                            Battery</p>
+                                        <p>{user.battery}</p>
                                     </div>
 
-                                    <div className=" w-1/2  justify-between  flex">
-
-                                        <p className="font-bold mx-8 text-yellow-600">Registered in</p>
-
-                                        <p>{user.registration}</p>
-                                    </div>
 
                                 </div>
+                                <div className=" w-full p-4 border flex">
 
-                                <div className=" mx-4 m-3">
+                                    <div className=" w-1/2 justify-between  flex">
+
+                                        <p className="font-bold text-yellow-600">Memory</p>
+
+                                        <p>{user.memory}</p>
+                                    </div>
+
+
+                                    <div className="flex w-1/2 justify-between ">
+                                        <p className="font-bold text-yellow-600 mx-6">Display</p>
+                                        <p>{user.display}</p>
+                                    </div>
+                                </div>
+                                <div className=" mx-3 m-3">
                                     <p className="font-bold text-yellow-600">Details</p>
                                     <p className="w-full p-3">{user.details}</p>
                                 </div>
@@ -100,7 +109,6 @@ function BikeDetails() {
 
 
                             </div>
-
 
 
                         </div> : ""
@@ -112,4 +120,4 @@ function BikeDetails() {
     )
 }
 
-export default BikeDetails
+export default MobileDetails

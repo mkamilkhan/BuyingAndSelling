@@ -14,6 +14,8 @@ import MobileProducts from './pages/mobileProducts'
 import VehicalProducts from './pages/vehicalProducts'
 import VehicalDetails from './components/vehicalDetails';
 import BikeDetails from './components/bikeDetails';
+import MobileDetails from './components/mobileDetails'
+import FurnitureDetails from './components/furnitureDetails';
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,6 +32,9 @@ function App() {
           <div>
 
             <Switch>
+              <Route path={"/home"} component={Home}>
+                <Home />
+              </Route>
               <Route path={"/vehicalForm"} component={VehicalForm}>
                 <VehicalForm />
               </Route>
@@ -67,11 +72,27 @@ function App() {
                 < BikeDetails />
 
               </Route>
+              <Route path={"/mobileDetails/:id"} component={MobileDetails}>
+                < MobileDetails />
+
+              </Route>
+              <Route path={"/furnitureDetails/:id"} component={FurnitureDetails}>
+                < FurnitureDetails />
+
+              </Route>
+              <Route path={"/AddProducts/"} component={AddProducts}>
+                < AddProducts />
+
+              </Route>
+              <Route path={"/AllProducts/"} component={AllProducts}>
+                < AllProducts />
+
+              </Route>
               {/* <AddProducts></AddProducts> */}
-              {/* <Home></Home> */}
+              <Home></Home>
               {/* <BikeProducts ></BikeProducts> */}
               {/* <FurnitureProducts></FurnitureProducts> */}
-              <AddProducts></AddProducts>
+              {/* <AddProducts></AddProducts>s */}
               {/* <VehicalDetails></VehicalDetails> */}
               {/* <AllProducts></AllProducts> */}
               {/* <VehicalProducts></VehicalProducts> */}

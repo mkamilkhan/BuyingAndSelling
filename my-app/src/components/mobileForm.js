@@ -15,13 +15,15 @@ function MobileForm() {
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
     const [model, setModel] = useState('');
-    const [ReleaseDate, setReleaseDate] = useState('');
+    const [releaseDate, setReleaseDate] = useState('');
     const [price, setPrice] = useState('');
-    const [Os, setOs] = useState('');
+    const [display, setDisplay] = useState('');
     const [color, setColor] = useState('');
-    const [Cpu, setCpu] = useState('');
-    const [Company, setCompany] = useState('');
-    const [Memory, setMemory] = useState('');
+    const [cpu, setCpu] = useState('');
+    const [battery, setBattery] = useState('');
+    const [details, setDetails] = useState('');
+    const [memory, setMemory] = useState('');
+    const [image, setImage] = useState('');
 
 
 
@@ -36,14 +38,17 @@ function MobileForm() {
             phonenumber: phone,
             name: username,
             addres: address,
-            Release: ReleaseDate,
-            price1: price,
-            Os1: Os,
-            color1: color,
-            Cpu1: Cpu,
-            Company1: Company,
-            Memory1: Memory,
-            // image1: file
+            release: releaseDate,
+            price: price,
+            display: display,
+            color: color,
+            cpu: cpu,
+            battery: battery,
+            memory: memory,
+            details: details,
+
+            image: image
+
 
         })
             .then((resp) => {
@@ -56,7 +61,7 @@ function MobileForm() {
     }
     return (
 
-        <div className="desh">
+        <div className="">
             <div className="">
                 <div className="border hight-cover font-serif m-12 flex shadow-2xl  ">
                     <div className="  relative mobile-img  ">
@@ -83,20 +88,78 @@ function MobileForm() {
                             <div className=" font-bold p-2 w-full  flex">
 
 
-                                <input value={phone} onChange={(e) => setPhone(e.target.value)} className=" text-sm border text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="UserName:" ></input>
-                                <input value={username} onChange={(e) => setUsername(e.target.value)} className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="number" placeholder="Phone-Number:" ></input>
+                                <input value={username} onChange={(e) => setUsername(e.target.value)} className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="text" placeholder=" UserName" ></input>
+                                <input value={phone} onChange={(e) => setPhone(e.target.value)} className=" text-sm border text-gray-600 w-1/2 p-3 font-bold" type="number" placeholder="Phone-Number:" ></input>
                             </div>
                             <div className="  font-bold p-2 w-full  flex">
 
                                 <input value={address} onChange={(e) => setAddress(e.target.value)} className="border text-sm  text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Address:"></input>
+                                <select value={model} onChange={(e) => setModel(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="Memory" >
+                                    <option>Model</option>
 
-                                <input value={model} onChange={(e) => setModel(e.target.value)} className="border text-sm mx-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Model-Name:"></input>
+
+                                    <option>Samsung Mobile</option>
+                                    <option>Huawei Mobile </option>
+                                    <option>Honor Mobile</option>
+                                    <option>OPPO Mobile</option>
+                                    <option>Nokia </option>
+                                    <option>Apple iphone </option>
+                                    <option>Sony</option>
+                                    <option>LG Mobile</option>
+                                    <option>Infinix
+                                        Note 10 Pro</option>
+                                    <option>Oppo
+                                        A16</option>
+                                    <option>Vivo Y53s</option>
+                                    <option>Oppo Reno 6</option>
+                                    <option>Samsung
+                                        Galaxy Z Flip 3</option>
+                                    <option>Samsung
+                                        Galaxy Z Fold 3</option>
+                                    <option>OnePlus
+                                        Nord CE 5G</option>
+                                    <option>Xiaomi
+                                        Poco X3 GT</option>
+                                    <option>Vivo
+                                        V21</option>
+                                    <option>Samsung
+                                        Galaxy A22 6GB</option>
+                                    <option>Nokia
+                                        X10</option>
+                                    <option>Infinix
+                                        Note 10 Pro</option>
+                                    <option>Tecno
+                                        Spark 7</option>
+                                    <option>Xiaomi 10</option>
+                                    <option>Tecno
+                                        Camon 17 Pro</option>
+                                    <option>Infinix
+                                        Note 10 Pro</option>
+                                    <option>Vivo
+                                        Y12A</option>
+                                    <option>Realme
+                                        Narzo 30</option>
+
+                                </select>
+                                {/* <input value={} onChange={(e) => (e.target.value)} className="border text-sm mx-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="model"></input> */}
 
                             </div>
                             <div className="  font-bold p-2 full  flex">
+                                <select value={memory} onChange={(e) => setMemory(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="Memory" >
+                                    <option>Memory</option>
+                                    <option>2GB</option>
+                                    <option>4GB</option>
+                                    <option>6GB</option>
+                                    <option>8GB</option>
+                                    <option>16GB</option>
+                                    <option>32GB</option>
+                                    <option>64GB</option>
+                                    <option>128GB</option>
+                                    <option>5000 mAh  </option>
 
-                                <input value={Company} onChange={(e) => setCompany(e.target.value)} className="border text-sm text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Company:"></input>
-                                <input value={ReleaseDate} onChange={(e) => setReleaseDate(e.target.value)} className="border text-sm mx-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Release-Date:" ></input>
+                                </select>
+                                {/* <input value={memory} onChange={(e) => setMemory(e.target.value)} className="border text-sm text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Memory"></input> */}
+                                <input value={releaseDate} onChange={(e) => setReleaseDate(e.target.value)} className="border text-sm mx-1 text-gray-600 w-full p-3 font-bold" type="date" placeholder="Release-Date:" ></input>
 
                             </div>
 
@@ -105,28 +168,73 @@ function MobileForm() {
 
 
                                 <input value={price} onChange={(e) => setPrice(e.target.value)} className="border text-sm text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Price:"></input>
+                                <select value={display} onChange={(e) => setDisplay(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="display" >
+                                    <option>Display</option>
 
-                                <input value={Os} onChange={(e) => setOs(e.target.value)} className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="text" placeholder="Os:" ></input>
+                                    <option>6.43 inches (16.33 cm) </option>
+                                    <option>
+                                        6.6 inches (16.76 cm)</option>
+                                    <option>
+                                        6.4 inches (16.26 cm) </option>
+                                    <option>6.5 inches (16.51 cm) </option>
+                                    <option>6.67 inches (16.94 cm) </option>
+
+
+
+
+                                </select>
+                                {/* <input value={os} onChange={(e) => setOs(e.target.value)} className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="text" placeholder="Os:" ></input> */}
                             </div>
 
                             <div className="  font-bold p-2  flex">
 
 
-                                <input value={Cpu} onChange={(e) => setCpu(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Cpu:"></input>
+                                {/* <input value={battery} onChange={(e) => setBattery(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Battery:"></input> */}
 
                             </div>
                             <div className="  font-bold p-2  flex">
 
+                                <select value={battery} onChange={(e) => setBattery(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="battery" >
+                                    <option>battery</option>
 
-                                <input value={Memory} onChange={(e) => setMemory(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Memory:"></input>
 
+                                    <option>4000 mAh  </option>
+                                    <option>5000 mAh  </option>
+                                    <option>5160 mAh  </option>
+                                    <option>7000 mAh  </option>
+
+                                </select>
+                                {/* <input value={} onChange={(e) => (e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Cpu:"></input> */}
+                                <select value={cpu} onChange={(e) => setCpu(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="cpu" >
+                                    <option>Processor</option>
+
+
+                                    <option>Octa core (2 GHz, Dual C</option>
+                                    <option>Octa core (2.05 GHz, Dual </option>
+                                    <option>Octa core (2.96 GHz, Singl</option>
+                                    <option>Octa core (2.2 GHz, Dual C</option>
+                                    <option>Octa core (2.3 GHz, Quad </option>
+                                    <option>Octa core (2.4 GHz, Quad </option>
+
+                                </select>
+                                <select value={color} onChange={(e) => setColor(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="color" >
+                                    <option>Color</option>
+
+
+                                    <option>Twilight.</option>
+                                    <option>Coral Pink </option>
+                                    <option>Ruby Red gradient</option>
+                                    <option>Rose Gold</option>
+                                    <option>Lilac Purple </option>
+                                    <option>Phantom Green and Phantom Blue </option>
+                                    <option>Nebula Purple</option>
+                                    <option>Ocean Depths</option>
+
+                                </select>
                             </div>
 
                             <div className="  font-bold p-2  flex">
-
-
-
-                                <input value={color} onChange={(e) => setColor(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Color:"></input>
+                                <textarea value={details} onChange={(e) => setDetails(e.target.value)} className="border text-sm  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Details " className="border w-full p-2 text-sm h-32"></textarea>
                             </div>
                             <div className="text-center  ">
 
@@ -135,6 +243,7 @@ function MobileForm() {
 
 
                                 </Link>
+                                <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-4" placeholder="Image"></input>
 
                             </div>
                         </div>

@@ -4,6 +4,8 @@ import { db, storage } from "../firebaseData"
 import { useState, useEffect } from 'react'
 import SearcHeader from './searcHeader';
 // import SideBar from './sideBar';
+import FeatherIcon from 'feather-icons-react';
+
 import { Link } from 'react-router-dom'
 
 function MobileCarts() {
@@ -21,13 +23,19 @@ function MobileCarts() {
     const filterNames = (res) => {
 
 
-        return res.price1.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
+        // return res.price1.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
 
     };
     return (
         <div className="w-full">
-            <div className=" desh w-full dark-cols p-6">
-                <SearcHeader className="desh" onSearch={setSearchValue} value={searchValue} />
+            <div className="  w-full  p-6">
+                <div>
+                    <Link to="/home">
+
+                        <FeatherIcon Link to="/login" icon="arrow-left" color="orange" size="30" className=" m-4 absolute bg-white rounded-full shadow-xl p-1    " />
+                    </Link>
+                </div>
+                <SearcHeader className="" onSearch={setSearchValue} value={searchValue} />
 
             </div>
             <div className="flex " >
@@ -38,21 +46,21 @@ function MobileCarts() {
                             <div className="justify-around   ">
 
                                 <Link to="/addProducts">
-                                    <p className="p-12 darks-cols border-b border-gray-600">AllProducts</p>
+                                    <p className="p-12 darks-cols border-b border-yellow-700">Add Products</p>
                                 </Link>
 
                                 <Link to="/vehicalProducts">
 
-                                    <p className="p-12 darks-cols border-b border-gray-600">Vehicles</p>
+                                    <p className="p-12 darks-cols border-b border-yellow-700">Vehicles</p>
                                 </Link>
 
                                 <Link to="/bikeProducts">
-                                    <p className=" darks-cols border-b p-12 border-gray-600 ">Bikes</p>
+                                    <p className=" darks-cols border-b p-12 border-yellow-700 ">Bikes</p>
                                 </Link>
                             </div>
                             <div className="  w-full justify-around  ">
                                 <Link to="/mobileProducts">
-                                    <p className=" darks-cols border-b p-12 border-gray-600 ">Mobile</p>
+                                    <p className=" darks-cols border-b p-12 border-yellow-700 ">Mobile</p>
                                 </Link>
                             </div>
                             <div className="   w-full justify-around  ">
@@ -70,15 +78,22 @@ function MobileCarts() {
                 <div className="flex flex-wrap">
 
                     {
-                        users.filter(filterNames).map((user, i) =>
+                        users.map((user, i) =>
 
                             <div key={i} className=" m-3">
                                 <div className="w-64">
-                                    <div>
 
-                                        <img src={Assets} id="slideImage" className=" rounded"></img>
-                                    </div>
-                                    <div className="text-xs py-4 p-3 flex-grow rounded font-bold text-gray-700 border shadow-md">
+                                    <Link to={`/mobileDetails/:${user.id}`} exact>
+                                        <div className="relative flex justify-end w-full ">
+
+
+                                            <img src={user.image} id="slideImage" className=" rounded w-full h-48"></img>
+
+                                            <FeatherIcon size="25" className="p-1 mt-1 top-0  mx-2 border rounded-full bg-gray-100 absolute shadow-xl " icon="file-minus" color="rgb(226, 98, 13)" />
+                                        </div>
+                                    </Link>
+
+                                    <div className="text-xs py-4 p-1  flex-grow rounded font-bold text-gray-700 border shadow-md">
                                         <div className=" justify-between flex">
                                             {/* <p>Phone: {user.phonenumber}</p> */}
                                             {/* <p>Model: {user.model1}</p> */}
@@ -90,23 +105,23 @@ function MobileCarts() {
 
                                             <p>ReleaseDate: {user.Release} </p>
 
-                                            <p>color: {user.price1} </p>
+                                            <p>color: {user.color} </p>
                                         </div>
                                         <div className=" justify-between flex">
 
-                                            <p>price: {user.Os1} </p>
+                                            <p>price: {user.price} </p>
 
                                         </div>
                                         <div className=" justify-between flex">
-                                            <p>Os: {user.color1} </p>
+                                            <p>Os: {user.os} </p>
 
-                                            <p>Cpu: {user.Cpu1} </p>
+                                            <p>Cpu: {user.cpu} </p>
 
                                         </div>
 
                                         {/* <p>Address: {user.addres} </p> */}
-                                        <p>Company: {user.Company1} </p>
-                                        <p>Memory: {user.Memory1}</p>
+                                        {/* <p>Company: {user.Company1} </p> */}
+                                        <p>Memory: {user.memory}</p>
 
                                     </div>
                                 </div>
