@@ -68,7 +68,7 @@ function BikeForm() {
 
                         <Link to="/addProducts">
 
-                            <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="30" className="mr-auto m-2 absolute bg-white rounded-full slideImag shadow-xl p-2 top-0   " />
+                            <FeatherIcon icon="arrow-left" color="orange" size="30" className="mr-auto m-2 absolute bg-white rounded-full slideImag shadow-xl p-2 top-0   " />
                         </Link>
                         <div className="mt-56 text-center font-bold ">
                             <p className="text-white  border-b-4 border-yellow-500 py-6 mx-12 text-6xl"><span className="text-yellow-700">
@@ -184,7 +184,7 @@ function BikeForm() {
                                     <button className="info-bg shadow-2xl info-col p-3 font-bold rounded-md border w-1/2 " onClick={save}>Save</button>
                                 </Link>
                                 {/* {error} */}
-                                <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-4" placeholder="Image"></input>
+                                <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
 
                             </div>
                             {/* <input value={file} onChange={(e) => setFile(e.target.value)} className="p-3 border font-bold rounded-md border w-1/2 " ></input> */}

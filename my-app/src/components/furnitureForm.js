@@ -56,7 +56,7 @@ function FurnitureForm() {
 
                             <Link to="/addProducts">
 
-                                <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="30" className="mr-auto m-2 slideImag absolute bg-white rounded-full shadow-xl p-2 top-0   " />
+                                <FeatherIcon icon="arrow-left" color="orange" size="30" className="mr-auto m-2 slideImag absolute bg-white rounded-full shadow-xl p-2 top-0   " />
                             </Link>
                             <div className="mt-56 text-center font-bold ">
                                 <p className="text-white border-b-4 border-yellow-500 py-6 mx-12 text-6xl"><span className="text-yellow-500">
@@ -81,7 +81,7 @@ function FurnitureForm() {
                                 </div>
                                 <div className="  font-bold p-2 w-full  flex">
 
-                                    <input value={address} onChange={(e) => setAddress(e.target.value)} className="border text-sm  text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Address:"></input>
+                                    <input value={address} onChange={(e) => setAddress(e.target.value)} className="border text-sm  text-gray-600 w-full mx-1 p-3 font-bold" type="text" placeholder="Address:"></input>
 
                                     <select value={typeOfFurniure} onChange={(e) => setTypeOfFurniure(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="battery" >
                                         <option>TypeOfFurniure</option>
@@ -125,7 +125,7 @@ function FurnitureForm() {
 
                                 </div>
                                 <div className="  font-bold p-2 full  flex">
-                                    <select value={TypeOfWood} onChange={(e) => setTypeOfWood(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="battery" >
+                                    <select value={TypeOfWood} onChange={(e) => setTypeOfWood(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full mx-1 p-4 font-bold" type="text" placeholder="battery" >
                                         <option>TypeOfWood</option>
 
 
@@ -208,7 +208,7 @@ function FurnitureForm() {
                                             <button onClick={save} className="info-bg info-col p-3 font-bold rounded-md border w-full  ">Save</button>
                                         </Link>
                                     </div>
-                                    <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-2" placeholder="Image"></input>
+                                    <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
 
                                 </div>
                             </div>

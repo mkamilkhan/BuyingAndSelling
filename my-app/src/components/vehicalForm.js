@@ -63,7 +63,7 @@ function VehicalForm() {
 
                         <Link to="/addProducts">
 
-                            <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="30" className="mr-auto m-2 slideImag absolute bg-white rounded-full shadow-xl p-2 top-0   " />
+                            <FeatherIcon icon="arrow-left" color="orange" size="30" className="mr-auto m-2 slideImag absolute bg-white rounded-full shadow-xl p-2 top-0   " />
                         </Link>
                         <div className=" mt-56 text-center font-bold ">
                             <p className="text-white border-b-4 border-yellow-500 py-6 mx-12 text-6xl"><span className="text-yellow-700">
@@ -179,7 +179,7 @@ function VehicalForm() {
                                     <option>New</option>
 
                                 </select>
-                                <input value={kmdvin} onChange={(e) => setKmdvin(e.target.value)} className="border rounded-md text-sm text-gray-600 w-full p-4 font-bold" type="text" placeholder="KM's driven:"></input>
+                                <input value={kmdvin} onChange={(e) => setKmdvin(e.target.value)} className="border rounded-md text-sm text-gray-600 w-full mx-1 p-4 font-bold" type="text" placeholder="KM's driven:"></input>
                                 {/* <input value={make} onChange={(e) => setMake(e.target.value)} className="border rounded-md text-sm ml-1 text-gray-600  w-full p-4 font-bold" type="text" placeholder="Make" ></input> */}
 
                                 <select value={registration} onChange={(e) => setRegistration(e.target.value)} className="border text-sm  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Registered in ">
@@ -221,7 +221,7 @@ function VehicalForm() {
 
                                     <button onClick={save} className="info-bg p-4 font-bold info-col rounded-md border w-1/2 ">Save</button>
                                 </Link>
-                                <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-4" placeholder="Image"></input>
+                                <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
                             </div>
                         </div>
                     </div>

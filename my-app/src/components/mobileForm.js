@@ -68,7 +68,7 @@ function MobileForm() {
 
                         <Link to="/addProducts">
 
-                            <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="30" className="mr-auto m-2 slideImag absolute bg-white rounded-full shadow-xl p-2 top-0   " />
+                            <FeatherIcon icon="arrow-left" color="orange" size="30" className="mr-auto m-2 slideImag absolute bg-white rounded-full shadow-xl p-2 top-0   " />
                         </Link>
                         <div className="mt-56 text-center font-bold ">
                             <p className="text-white border-b-4 border-yellow-500 py-6 mx-12 text-6xl"><span className="text-yellow-500">
@@ -93,7 +93,7 @@ function MobileForm() {
                             </div>
                             <div className="  font-bold p-2 w-full  flex">
 
-                                <input value={address} onChange={(e) => setAddress(e.target.value)} className="border text-sm  text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Address:"></input>
+                                <input value={address} onChange={(e) => setAddress(e.target.value)} className="border text-sm  text-gray-600 w-full mx-1 p-3 font-bold" type="text" placeholder="Address:"></input>
                                 <select value={model} onChange={(e) => setModel(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="Memory" >
                                     <option>Model</option>
 
@@ -155,7 +155,6 @@ function MobileForm() {
                                     <option>32GB</option>
                                     <option>64GB</option>
                                     <option>128GB</option>
-                                    <option>5000 mAh  </option>
 
                                 </select>
                                 {/* <input value={memory} onChange={(e) => setMemory(e.target.value)} className="border text-sm text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Memory"></input> */}
@@ -167,8 +166,8 @@ function MobileForm() {
                             <div className="  font-bold p-2 w-full  flex">
 
 
-                                <input value={price} onChange={(e) => setPrice(e.target.value)} className="border text-sm text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Price:"></input>
-                                <select value={display} onChange={(e) => setDisplay(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="display" >
+                                <input value={price} onChange={(e) => setPrice(e.target.value)} className="border text-sm mx-1 text-gray-600 w-full p-3 font-bold" type="text" placeholder="Price:"></input>
+                                <select value={display} onChange={(e) => setDisplay(e.target.value)} className="border rounded-md text-sm   text-gray-600 w-full p-4 font-bold" type="text" placeholder="display" >
                                     <option>Display</option>
 
                                     <option>6.43 inches (16.33 cm) </option>
@@ -178,37 +177,22 @@ function MobileForm() {
                                         6.4 inches (16.26 cm) </option>
                                     <option>6.5 inches (16.51 cm) </option>
                                     <option>6.67 inches (16.94 cm) </option>
-
-
-
-
                                 </select>
-                                {/* <input value={os} onChange={(e) => setOs(e.target.value)} className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="text" placeholder="Os:" ></input> */}
                             </div>
 
-                            <div className="  font-bold p-2  flex">
 
-
-                                {/* <input value={battery} onChange={(e) => setBattery(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Battery:"></input> */}
-
-                            </div>
                             <div className="  font-bold p-2  flex">
 
                                 <select value={battery} onChange={(e) => setBattery(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="battery" >
                                     <option>battery</option>
-
-
                                     <option>4000 mAh  </option>
                                     <option>5000 mAh  </option>
                                     <option>5160 mAh  </option>
                                     <option>7000 mAh  </option>
 
                                 </select>
-                                {/* <input value={} onChange={(e) => (e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Cpu:"></input> */}
-                                <select value={cpu} onChange={(e) => setCpu(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="cpu" >
+                                <select value={cpu} onChange={(e) => setCpu(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full mx-1 p-4 font-bold" type="text" placeholder="cpu" >
                                     <option>Processor</option>
-
-
                                     <option>Octa core (2 GHz, Dual C</option>
                                     <option>Octa core (2.05 GHz, Dual </option>
                                     <option>Octa core (2.96 GHz, Singl</option>
@@ -243,7 +227,7 @@ function MobileForm() {
 
 
                                 </Link>
-                                <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-4" placeholder="Image"></input>
+                                <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
 
                             </div>
                         </div>

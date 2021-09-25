@@ -29,14 +29,10 @@ function MobileDetails() {
                 </div>
                 {
                     users.map((user, i) => (`:${user.id}` === id ?
-
-
                         <div >
                             <div key={i} className=" flex w-3/4 ml-48 pt-24 ">
-
-                                <div className="w-3/4  ">
+                                <div className="w-3/4">
                                     <img src={user.image} id="slideImage" className=" rounded w-full h-full"></img>
-
                                 </div>
                                 <div className="w-1/4 font-normal bg-white text-gray-700 ">
                                     <div className="p-3  rounded h-64">

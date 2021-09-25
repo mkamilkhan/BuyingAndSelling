@@ -23,7 +23,7 @@ function addProducts() {
                 <div>
                     <Link to="/home">
 
-                        <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="50" className=" m-12  absolute bg-white rounded-full shadow-xl p-2 top-0   " />
+                        <FeatherIcon icon="arrow-left" color="orange" size="50" className=" m-12  absolute bg-white rounded-full shadow-xl p-2 top-0   " />
                     </Link>
 
                 </div>
