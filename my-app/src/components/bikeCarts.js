@@ -100,12 +100,12 @@ function BikeCarts() {
                                     <div className=" justify-between flex">
                                         {/* <p>Milage: {user.milage1} </p> */}
 
-                                        <p>Company: {user.bikeName} </p>
+                                        <p>Company: {user.productName} </p>
 
                                     </div>
 
                                     {/* <p>Address: {user.addres} </p> */}
-                                    <p>Color: {user.bikeName} </p>
+                                    <p>Color: {user.color} </p>
                                     <p>Registration: {user.registration}</p>
 
                                 </div>

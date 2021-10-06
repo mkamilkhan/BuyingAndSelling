@@ -16,6 +16,10 @@ import VehicalDetails from './components/vehicalDetails';
 import BikeDetails from './components/bikeDetails';
 import MobileDetails from './components/mobileDetails'
 import FurnitureDetails from './components/furnitureDetails';
+import Admin from './admin/admin';
+import AdminLogin from './admin/adminLogin';
+import AdminRegister from './admin/adminRegister';
+// import AdminSign from './admin/adminSign';
 import {
   BrowserRouter as Router,
   Switch,
@@ -88,14 +92,25 @@ function App() {
                 < AllProducts />
 
               </Route>
-              {/* <AddProducts></AddProducts> */}
-              <Home></Home>
-              {/* <BikeProducts ></BikeProducts> */}
-              {/* <FurnitureProducts></FurnitureProducts> */}
-              {/* <AddProducts></AddProducts>s */}
-              {/* <VehicalDetails></VehicalDetails> */}
-              {/* <AllProducts></AllProducts> */}
-              {/* <VehicalProducts></VehicalProducts> */}
+              <Route path={"/admin/"} component={Admin}>
+                < Admin />
+
+              </Route>
+              <Route path={"/adminRegister"} component={AdminRegister} exact>
+
+                < AdminRegister />
+              </Route>
+              <Route path={"/adminLogin"} component={AdminLogin} exact>
+
+                < AdminLogin />
+              </Route>
+              {/* <Admin></Admin> */}
+              {/* <AdminRegister></AdminRegister> */}
+              <Home />
+              {/* <AdminLogin></AdminLogin> */}
+
+              {/* <AdminSign ></AdminSign > */}
+
             </Switch>
 
           </div>

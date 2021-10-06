@@ -11,7 +11,7 @@ function FurnitureForm() {
     const [username, setUsername] = useState('');
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
-    const [typeOfFurniure, setTypeOfFurniure] = useState('');
+    const [productName, setProductName] = useState('');
     const [TypeOfWood, setTypeOfWood] = useState('');
     const [price, setPrice] = useState('');
     const [color, setColor] = useState('');
@@ -31,7 +31,7 @@ function FurnitureForm() {
             phonenumber: phone,
             name: username,
             addres: address,
-            typeOfFurniure1: typeOfFurniure,
+            productName: productName,
             TypeOfWood: TypeOfWood,
             color: color,
             price: price,
@@ -83,7 +83,7 @@ function FurnitureForm() {
 
                                     <input value={address} onChange={(e) => setAddress(e.target.value)} className="border text-sm  text-gray-600 w-full mx-1 p-3 font-bold" type="text" placeholder="Address:"></input>
 
-                                    <select value={typeOfFurniure} onChange={(e) => setTypeOfFurniure(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="battery" >
+                                    <select value={productName} onChange={(e) => setProductName(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="TypeOfFurniure" >
                                         <option>TypeOfFurniure</option>
 
 

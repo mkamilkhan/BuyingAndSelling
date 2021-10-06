@@ -21,7 +21,7 @@ function FurnitureCarts() {
     const filterNames = (res) => {
 
 
-        return res.name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
+        return res.TypeOfWood.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
 
     };
     return (
@@ -97,7 +97,7 @@ function FurnitureCarts() {
 
 
                                         <div className=" w-full  justify-between ">
-                                            <p className="p-1 font-bold">TypeOfFurniure: {user.typeOfFurniure1} </p>
+                                            <p className="p-1 font-bold">TypeOfFurniure: {user.productName} </p>
                                             <p className="p-1 font-bold">Addres: {user.addres} </p>
 
 

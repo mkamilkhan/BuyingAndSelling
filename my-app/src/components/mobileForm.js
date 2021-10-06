@@ -43,6 +43,7 @@ function MobileForm() {
             display: display,
             color: color,
             cpu: cpu,
+            model: model,
             battery: battery,
             memory: memory,
             details: details,
@@ -94,7 +95,7 @@ function MobileForm() {
                             <div className="  font-bold p-2 w-full  flex">
 
                                 <input value={address} onChange={(e) => setAddress(e.target.value)} className="border text-sm  text-gray-600 w-full mx-1 p-3 font-bold" type="text" placeholder="Address:"></input>
-                                <select value={model} onChange={(e) => setModel(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="Memory" >
+                                <select value={model} onChange={(e) => setModel(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="Model" >
                                     <option>Model</option>
 
 

@@ -21,7 +21,7 @@ function BikeForm() {
     const [address, setAddress] = useState('');
     const [model, setModel] = useState('');
     const [engine, setEngine] = useState('');
-    const [bikeName, setBikeName] = useState('');
+    const [productName, setProductName] = useState('');
     const [color, setColor] = useState('');
     const [registration, setRegistration] = useState('');
     const [condition, setCondition] = useState('');
@@ -44,7 +44,7 @@ function BikeForm() {
             addres: address,
             model: model,
             engine: engine,
-            bikeName: bikeName,
+            productName: productName,
             color: color,
             registration: registration,
             condition: condition,
@@ -109,7 +109,7 @@ function BikeForm() {
                                 </select>
                                 {/* <input value={condition} onChange={(e) => setCondition(e.target.value)} className="border ml-1 text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Condition"></input> */}
 
-                                <select value={bikeName} onChange={(e) => setBikeName(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="Car name" >
+                                <select value={productName} onChange={(e) => setProductName(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="Car name" >
                                     <option>bikeName</option>
                                     <option>Honda CB 125F</option>
                                     <option>Honda CD 70</option>

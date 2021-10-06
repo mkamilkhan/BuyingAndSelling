@@ -34,9 +34,9 @@ export default function header() {
                         <p className="text-white  btn1 mx-2" >AllProducts</p>
                     </Link>
 
-                    <Link to="/addProducts">
+                    <Link to="/adminLogin">
 
-                        <p className="text-white btn1 mx-2" >SELL</p>
+                        <p className="text-white btn1 mx-2" >Go To Admin</p>
                     </Link>
 
                 </div>
