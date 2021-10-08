@@ -60,12 +60,12 @@ function Admin() {
             console.log(resp, "deletessss")
         })
     }
-    // const filterNames = (res) => {
+    const filterNames = (res) => {
 
 
-    //     return res.model.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
+        return res.name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
 
-    // };
+    };
     return (
         <div>
             <div className="bg-gray-100 font-mono">
@@ -84,7 +84,7 @@ function Admin() {
                 </div>
                 <div className="flex flex-wrap justify-center  w-full ">
                     {
-                        users.map((res, i) => (
+                        users.filter(filterNames).map((res, i) => (
 
                             <div className=" mt-8 m-2 ">
                                 <div className="w-64">
@@ -125,7 +125,7 @@ function Admin() {
                 </div>
                 <div className="flex flex-wrap justify-center  w-full ">
                     {
-                        carDate.map((res, i) => (
+                        carDate.filter(filterNames).map((res, i) => (
 
                             <div className=" mt-8 m-2 ">
                                 <div className="w-64">
@@ -179,7 +179,7 @@ function Admin() {
                 </div>
                 <div className="flex flex-wrap justify-center  w-full ">
                     {
-                        funiterData.map((res, i) => (
+                        funiterData.filter(filterNames).map((res, i) => (
 
                             <div className=" mt-8 m-2 ">
                                 <div className="w-64">
@@ -230,7 +230,7 @@ function Admin() {
                 </div>
                 <div className="flex flex-wrap justify-center  w-full ">
                     {
-                        bikeDate.map((res, i) => (
+                        bikeDate.filter(filterNames).map((res, i) => (
 
                             <div className=" mt-8 m-2 ">
                                 <div className="w-64">

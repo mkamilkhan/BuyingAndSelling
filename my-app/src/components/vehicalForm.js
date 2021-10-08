@@ -1,12 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
-
+// import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import FeatherIcon from 'feather-icons-react';
-import Assets from '../assets/bike.jpeg';
-import { db, app, } from '../firebaseData'
+// import Assets from '../assets/bike.jpeg';
+import { db, app, storage } from '../firebaseData'
 
 function VehicalForm() {
+    // const { register, handleSubmit } = useForm()
+
+
 
     const [username, setUsername] = useState('');
     const [phone, setPhone] = useState('');
@@ -20,13 +23,14 @@ function VehicalForm() {
     const [registration, setRegistration] = useState('');
     const [condition, setCondition] = useState('');
     const [kmdvin, setKmdvin] = useState('');
-    const [image, setImage] = useState('');
+    const [imageUrl, setImageUrl] = useState();
 
 
 
 
     const save = () => {
         handledata()
+        // onchange()
     }
     const handledata = () => {
 
@@ -43,7 +47,7 @@ function VehicalForm() {
             price: price,
             condition: condition,
             kmdvin: kmdvin,
-            image: image,
+            image: imageUrl,
 
         })
             .then((resp) => {
@@ -55,8 +59,21 @@ function VehicalForm() {
 
     }
 
+    const onchange = async (e) => {
+        const file = e.target.files[0];
+        const storageRef = app.storage().ref('images').child(file.name);
+        await storageRef.put(file);
+        storageRef.getDownloadURL().then((url) => {
+            setImageUrl(url)
+        })
+    }
+
     return (
+
         <div>
+
+
+
             <div className="h-screen">
                 <div className="border font-serif m-12 hight-cover flex shadow-2xl  ">
                     <div className="  relative car-img  ">
@@ -89,7 +106,7 @@ function VehicalForm() {
 
 
                                 <input value={phone} onChange={(e) => setPhone(e.target.value)} className="border rounded-md text-sm text-gray-600  w-1/2 p-4 font-bold" type="number" placeholder=" Phone Number:" ></input>
-
+                                {/*     <img src={imageUrl} alt="aploood file" /> */}
                                 <input value={address} onChange={(e) => setAddress(e.target.value)} className="border rounded-md text-sm ml-1 text-gray-600 w-1/2 p-4 font-bold" type="text" placeholder=" Address:"></input>
                             </div>
 
@@ -216,12 +233,15 @@ function VehicalForm() {
                             <div className="  font-bold p-2  flex">
                                 <textarea value={details} onChange={(e) => setDetails(e.target.value)} className="border text-sm  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Details " className="border w-full p-2 text-sm h-32"></textarea>
                             </div>
-                            <div className="text-center mt-4 ">
-                                <Link to="/vehicalProducts">
+                            <div className="w-full  flex  mt-4 ">
+                                <Link to="/vehicalProducts" className="w-1/2">
 
-                                    <button onClick={save} className="info-bg p-4 font-bold info-col rounded-md border w-1/2 ">Save</button>
+                                    <button onClick={save} className="info-bg p-4 font-bold w-full info-col rounded-md border  ">Save</button>
                                 </Link>
-                                <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
+                                {/* <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input> */}
+                                <input type="file" onChange={onchange} className="border w-1/2 border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
+
+
                             </div>
                         </div>
                     </div>
@@ -229,6 +249,7 @@ function VehicalForm() {
 
             </div>
         </div>
+
     )
 }
 

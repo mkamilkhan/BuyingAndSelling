@@ -23,7 +23,8 @@ function MobileForm() {
     const [battery, setBattery] = useState('');
     const [details, setDetails] = useState('');
     const [memory, setMemory] = useState('');
-    const [image, setImage] = useState('');
+    const [imageUrl, setImageUrl] = useState();
+
 
 
 
@@ -47,8 +48,7 @@ function MobileForm() {
             battery: battery,
             memory: memory,
             details: details,
-
-            image: image
+            image: imageUrl,
 
 
         })
@@ -59,6 +59,14 @@ function MobileForm() {
                 console.error("Error adding document: " + error);
             });
 
+    }
+    const onchange = async (e) => {
+        const file = e.target.files[0];
+        const storageRef = app.storage().ref('images').child(file.name);
+        await storageRef.put(file);
+        storageRef.getDownloadURL().then((url) => {
+            setImageUrl(url)
+        })
     }
     return (
 
@@ -228,7 +236,8 @@ function MobileForm() {
 
 
                                 </Link>
-                                <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
+                                {/* <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input> */}
+                                <input type="file" onChange={onchange} className="border w-1/2 border-yellow-600 rounded p-2 bg-gray-200" placeholder="Image"></input>
 
                             </div>
                         </div>

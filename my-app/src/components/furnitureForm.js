@@ -16,7 +16,8 @@ function FurnitureForm() {
     const [price, setPrice] = useState('');
     const [color, setColor] = useState('');
     const [textarea, setTextarea] = useState('');
-    const [image, setImage] = useState('');
+    const [imageUrl, setImageUrl] = useState();
+
 
 
 
@@ -36,7 +37,8 @@ function FurnitureForm() {
             color: color,
             price: price,
             textarea: textarea,
-            image: image
+            image: imageUrl,
+
 
         })
             .then((resp) => {
@@ -46,6 +48,15 @@ function FurnitureForm() {
                 console.error("Error adding document: " + error);
             });
 
+    }
+
+    const onchange = async (e) => {
+        const file = e.target.files[0];
+        const storageRef = app.storage().ref("images").child(file.name);
+        await storageRef.put(file);
+        storageRef.getDownloadURL().then((url) => {
+            setImageUrl(url)
+        })
     }
     return (
         <div>
@@ -208,7 +219,7 @@ function FurnitureForm() {
                                             <button onClick={save} className="info-bg info-col p-3 font-bold rounded-md border w-full  ">Save</button>
                                         </Link>
                                     </div>
-                                    <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
+                                    <input type="file" onChange={onchange} className="border w-full border-yellow-600 rounded p-2 bg-gray-200" placeholder="Image"></input>
 
                                 </div>
                             </div>

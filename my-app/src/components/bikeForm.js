@@ -27,7 +27,8 @@ function BikeForm() {
     const [condition, setCondition] = useState('');
     const [price, setPrice] = useState('');
     const [details, setDetails] = useState('');
-    const [image, setImage] = useState('');
+    const [imageUrl, setImageUrl] = useState();
+
 
 
 
@@ -50,7 +51,8 @@ function BikeForm() {
             condition: condition,
             price: price,
             details: details,
-            image: image,
+            image: imageUrl,
+
 
         })
             .then((resp) => {
@@ -59,6 +61,15 @@ function BikeForm() {
             .catch((error) => {
                 console.error("Error adding document: " + error);
             });
+    }
+
+    const onchange = async (e) => {
+        const file = e.target.files[0];
+        const storageRef = app.storage().ref("images").child(file.name)
+        await storageRef.put(file)
+        storageRef.getDownloadURL().then((url) => {
+            setImageUrl(url)
+        })
     }
     return (
         <div>
@@ -184,7 +195,8 @@ function BikeForm() {
                                     <button className="info-bg shadow-2xl info-col p-3 font-bold rounded-md border w-1/2 " onClick={save}>Save</button>
                                 </Link>
                                 {/* {error} */}
-                                <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
+                                {/* <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input> */}
+                                <input type="file" onChange={onchange} className="border w-1/2 border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
 
                             </div>
                             {/* <input value={file} onChange={(e) => setFile(e.target.value)} className="p-3 border font-bold rounded-md border w-1/2 " ></input> */}
