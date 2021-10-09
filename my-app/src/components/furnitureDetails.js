@@ -51,7 +51,7 @@ function FurnitureDetails() {
                                         <p className="font-bold m-2 text-yellow-600 text-lg">Seller Information</p>
                                         <div className="m-2 text-sm">
 
-                                            <p className="my-1 font-bold">Name: {user.name}</p>
+                                            <p className="my-1 font-bold">Name: {user.username}</p>
 
                                             <p className="my-1 font-bold">Contect: {user.phonenumber}</p>
                                             <p className="font-bold">Address" {user.addres} </p>

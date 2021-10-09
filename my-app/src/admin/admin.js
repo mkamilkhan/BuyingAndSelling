@@ -1,22 +1,17 @@
 import React from 'react'
 import SearcHeader from '../components/searcHeader';
 import Logo from '../assets/rr.png';
-
 import { db, storage } from "../firebaseData"
 import FeatherIcon from 'feather-icons-react';
-
 import { Link } from 'react-router-dom'
-
 import { useState, useEffect } from 'react'
 function Admin() {
     const [users, setUsers] = useState([]);
     const [funiterData, setFuniterData] = useState([]);
     const [carDate, setCarDate] = useState([]);
     const [bikeDate, setBikeDate] = useState([]);
-    // const [mobileDate, setMobileDate] = useState([]);
     const [searchValue, setSearchValue] = useState("");
 
-    // const [searchValue, setSearchValue] = useState("");
 
     useEffect(() => {
         db.collection('mobilUsers').onSnapshot((resp) => {
@@ -101,7 +96,7 @@ function Admin() {
                                     <div className="text-xs py-4 p-1  bg-white flex-grow rounded font-bold text-gray-700 border shadow-md">
                                         <div className=" justify-between flex">
                                             <p>Cpu: {res.model}  </p>
-                                            {/* <p>ReleaseDate: {res.release} </p>÷ß */}
+                                            <p>model: {res.name} </p>÷ß
                                             <p>color: {res.color} </p>
                                         </div>
                                         <div className=" justify-between flex">
@@ -153,7 +148,7 @@ function Admin() {
                                         </div>
                                         <div className=" justify-between flex">
 
-                                            <p>Car:{res.carname}   </p>
+                                            <p>Car:{res.name}   </p>
 
                                         </div>
                                         <div className=" justify-between flex">
@@ -201,7 +196,7 @@ function Admin() {
 
 
                                             <div className=" w-full  justify-between ">
-                                                <p className="p-1 font-bold">TypeOfFurniure: {res.typeOfFurniure1} </p>
+                                                <p className="p-1 font-bold">TypeOfFurniure: {res.name} </p>
                                                 <p className="p-1 font-bold">Addres: {res.addres} </p>
 
 
@@ -257,11 +252,11 @@ function Admin() {
 
                                             <div className=" justify-between flex">
 
-                                                <p>Company: {res.bikeName} </p>
+                                                <p>Company: {res.name} </p>
 
                                             </div>
 
-                                            <p>Color: {res.bikeName} </p>
+                                            <p>Color: {res.color} </p>
                                             <p>Registration: {res.registration}</p>
 
                                         </div>

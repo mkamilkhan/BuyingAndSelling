@@ -37,14 +37,14 @@ function MobileForm() {
 
         db.collection("mobilUsers").add({
             phonenumber: phone,
-            name: username,
+            username: username,
             addres: address,
             release: releaseDate,
             price: price,
             display: display,
             color: color,
             cpu: cpu,
-            model: model,
+            name: model,
             battery: battery,
             memory: memory,
             details: details,
@@ -95,10 +95,28 @@ function MobileForm() {
                         <div className="">
 
                             <div className=" font-bold p-2 w-full  flex">
+                                <div className="w-1/3 ">
 
+                                    <input value={username} onChange={(e) => setUsername(e.target.value)} className="border text-sm mx-1 text-gray-600 w-full  p-3 font-bold" type="text" placeholder=" UserName" ></input>
+                                </div>
+                                <div className="w-1/3 ">
 
-                                <input value={username} onChange={(e) => setUsername(e.target.value)} className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="text" placeholder=" UserName" ></input>
-                                <input value={phone} onChange={(e) => setPhone(e.target.value)} className=" text-sm border text-gray-600 w-1/2 p-3 font-bold" type="number" placeholder="Phone-Number:" ></input>
+                                    <input value={phone} onChange={(e) => setPhone(e.target.value)} className=" text-sm border text-gray-600 w-full p-3 font-bold" type="number" placeholder="Phone-Number:" ></input>
+                                </div>
+
+                                <div className=" font-bold   w-1/3 justify-between flex">
+
+                                    <div className="mt-2">
+
+                                        <p className="text-xs text-yellow-500 font-bold">plz wait for</p>
+                                        <p className="text-xs text-yellow-500 font-bold"> Load Your image</p>
+                                    </div>
+                                    <div className="border border-6 p-1  rounded-full border-yellow-500 ">
+
+                                        <img src={imageUrl} className="w-12 h-12 slideImag rounded-full" />
+                                    </div>
+
+                                </div>
                             </div>
                             <div className="  font-bold p-2 w-full  flex">
 

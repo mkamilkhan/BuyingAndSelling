@@ -1,13 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import FeatherIcon from 'feather-icons-react';
-import Assets from '../assets/bike.jpeg';
 import { useState } from 'react'
 import { db, app, } from '../firebaseData'
-
-// import { db } from "../fireData"
-
 function FurnitureForm() {
+
     const [username, setUsername] = useState('');
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
@@ -18,11 +15,6 @@ function FurnitureForm() {
     const [textarea, setTextarea] = useState('');
     const [imageUrl, setImageUrl] = useState();
 
-
-
-
-
-
     const save = () => {
         handledata()
     }
@@ -30,9 +22,9 @@ function FurnitureForm() {
 
         db.collection("furniture").add({
             phonenumber: phone,
-            name: username,
+            username: username,
             addres: address,
-            productName: productName,
+            name: productName,
             TypeOfWood: TypeOfWood,
             color: color,
             price: price,
@@ -64,9 +56,7 @@ function FurnitureForm() {
                 <div className="">
                     <div className="border hight-cover font-serif m-12 flex shadow-2xl  ">
                         <div className="  relative furniture-img  ">
-
                             <Link to="/addProducts">
-
                                 <FeatherIcon icon="arrow-left" color="orange" size="30" className="mr-auto m-2 slideImag absolute bg-white rounded-full shadow-xl p-2 top-0   " />
                             </Link>
                             <div className="mt-56 text-center font-bold ">
@@ -83,12 +73,15 @@ function FurnitureForm() {
                                 </p>
                             </div>
                             <div className="">
-
-                                <div className=" font-bold p-2 w-full  flex">
-
-
-                                    <input value={username} onChange={(e) => setUsername(e.target.value)} className=" text-sm border text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="UserName:" ></input>
-                                    <input value={phone} onChange={(e) => setPhone(e.target.value)} className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="number" placeholder="Phone-Number:" ></input>
+                                <div className=" font-bold p-2  justify-between flex">
+                                    <input value={username} onChange={(e) => setUsername(e.target.value)} className=" text-sm rounded-md border text-gray-600 w-1/2 p-4 font-bold" type="text" placeholder=" UserName:" ></input>
+                                    <div className="mt-4">
+                                        <p className="text-xs text-yellow-500 font-bold">plz wait for</p>
+                                        <p className="text-xs text-yellow-500 font-bold"> Load Your image</p>
+                                    </div>
+                                    <div className="border border-6 p-1   rounded-full border-yellow-500 ">
+                                        <img src={imageUrl} className="w-12 h-12 slideImag rounded-full" />
+                                    </div>
                                 </div>
                                 <div className="  font-bold p-2 w-full  flex">
 
@@ -96,28 +89,20 @@ function FurnitureForm() {
 
                                     <select value={productName} onChange={(e) => setProductName(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="TypeOfFurniure" >
                                         <option>TypeOfFurniure</option>
-
-
                                         <option>Hoffman Bed Set
                                         </option>
                                         <option>Ferreira Bed
                                         </option>
                                         <option>Foldable Wardrobe</option>
                                         <option>Grace Single Bed</option>
-
-
                                         <option>Bretten Single Bed </option>
                                         <option>Darby Single Bed</option>
                                         <option>Millgrove Double Bed</option>
                                         <option>Nigel Double Bed </option>
-
-
                                         <option>Arora Towel Stand</option>
                                         <option>Paula Bed Side Table</option>
                                         <option>Paula Bed Side Table</option>
                                         <option>Cliff Bed Side Table</option>
-
-
                                         <option>Normani Bed Side Table </option>
                                         <option>Shein Bed Side Table </option>
                                         <option>Howard 4 Door Wardrobe </option>
@@ -138,31 +123,21 @@ function FurnitureForm() {
                                 <div className="  font-bold p-2 full  flex">
                                     <select value={TypeOfWood} onChange={(e) => setTypeOfWood(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full mx-1 p-4 font-bold" type="text" placeholder="battery" >
                                         <option>TypeOfWood</option>
-
-
                                         <option>Deodar
                                         </option>
                                         <option>Walnut tree wood
                                         </option>
                                         <option>Teak</option>
                                         <option>Softwood</option>
-
-
                                         <option>Chir pine</option>
                                         <option>Fir</option>
                                         <option>Millgrove Double Bed</option>
                                         <option>Hemlock </option>
-
-
-
-
                                     </select>
                                     {/* <input value={} onChange={(e) => (e.target.value)} className="border text-sm text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="TypeOfWood:"></input> */}
                                     {/* <input value={color} onChange={(e) => setColor(e.target.value)} className="border text-sm mx-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Color:" ></input> */}
                                     <select value={color} onChange={(e) => setColor(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="color" >
                                         <option>Color</option>
-
-
                                         <option> Chocolate Brown colour</option>
                                         <option>Coral Pink </option>
                                         <option>Ruby Red gradient</option>
@@ -189,38 +164,24 @@ function FurnitureForm() {
                                         <option>Dark lava</option>
                                         <option>Dark liver (horses)</option>
                                         <option>Fuzzy Wuzzy</option>
-
                                     </select>
                                 </div>
-
-
                                 <div className="  font-bold p-2 w-full  flex">
-
-
                                     <input value={price} onChange={(e) => setPrice(e.target.value)} className="border text-sm text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder="Price:"></input>
-
-                                    {/* <input className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="text" placeholder="Os:" ></input> */}
+                                    <input value={phone} onChange={(e) => setPhone(e.target.value)} className="border text-sm mx-1 text-gray-600  w-1/2 p-3 font-bold" type="number" placeholder="Phone-Number:" ></input>
                                 </div>
-
                                 <div className="w-full h-56">
-
-                                    {/* <FeatherIcon Link to="/login" icon="arrow-left" color="gray" size="30" className="mr-auto m-2 absolute bg-white rounded-full slideImag shadow-xl p-2 top-0   " /> */}
-                                    {/* <button className="info-bg shadow-2xl info-col p-3 font-bold rounded-md border w-1/2 " onClick={save}>Save</button> */}
                                     <textarea value={textarea} onChange={(e) => setTextarea(e.target.value)} className="border border-gray-300 rounded-md w-full h-48 text-sm text-gray-800 p-2" id="story" name="story" placeholder="Funitures-Details "
                                     >
-
                                     </textarea>
                                 </div>
                                 <div className="text-center flex ">
                                     <div className="w-full">
-
                                         <Link to="/furnitureProducts">
-
                                             <button onClick={save} className="info-bg info-col p-3 font-bold rounded-md border w-full  ">Save</button>
                                         </Link>
                                     </div>
                                     <input type="file" onChange={onchange} className="border w-full border-yellow-600 rounded p-2 bg-gray-200" placeholder="Image"></input>
-
                                 </div>
                             </div>
                         </div>

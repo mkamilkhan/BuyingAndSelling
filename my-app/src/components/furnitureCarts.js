@@ -12,21 +12,17 @@ function FurnitureCarts() {
 
     useEffect(() => {
         db.collection('furniture').onSnapshot((resp) => {
-
             const list = resp.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             setUsers(list);
             console.log(list);
         })
     }, []);
     const filterNames = (res) => {
-
-
-        return res.TypeOfWood.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
-
+        return res.name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
     };
     return (
-        <div className="">
-            <div className="  w-full  p-6">
+        <div >
+            <div className="w-full  p-6">
                 <div>
                     <Link to="/home">
 
@@ -64,9 +60,6 @@ function FurnitureCarts() {
                                 <Link to="/furnitureProducts">
                                     <p className=" darks-cols border-b p-12 border-yellow-700" >Furniture</p>
                                 </Link>
-
-
-
                             </div>
                         </div>
                     </div>
@@ -75,35 +68,23 @@ function FurnitureCarts() {
                 <div className=" flex flex-wrap  " >
                     {
                         users.filter(filterNames).map((user, i) =>
-
                             <div key={i} className="ml-3 mt-12">
                                 <div className=" w-64 ">
 
                                     <div>
                                         <Link to={`/furnitureDetails/:${user.id}`} exact>
                                             <div className="relative flex justify-end w-full ">
-
-
-                                                {/* <img src={Assets} id="slideImage" className=" rounded"></img> */}
                                                 <img src={user.image} id="slideImage" className=" rounded w-full h-48"></img>
-
                                                 <FeatherIcon size="25" className="p-1 mt-1 top-0  mx-2 border rounded-full bg-gray-100 absolute shadow-xl " icon="file-minus" color="rgb(226, 98, 13)" />
                                             </div>
                                         </Link>
-
                                     </div>
                                     <div className="text-xs w-full  py-4 p-1 flex-grow rounded font-bold text-gray-700 border shadow-md">
-
-
-
                                         <div className=" w-full  justify-between ">
-                                            <p className="p-1 font-bold">TypeOfFurniure: {user.productName} </p>
+                                            <p className="p-1 font-bold">TypeOfFurniure: {user.name} </p>
                                             <p className="p-1 font-bold">Addres: {user.addres} </p>
-
-
                                             <p className="p-1">TypeOfWood: {user.TypeOfWood} </p>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

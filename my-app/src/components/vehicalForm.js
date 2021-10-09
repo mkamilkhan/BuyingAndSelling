@@ -36,11 +36,11 @@ function VehicalForm() {
 
         db.collection("vihicalUser").add({
             phonenumber: phone,
-            name: username,
+            username: username,
             addres: address,
             model: model,
             fuel: fuel,
-            carname: carname,
+            name: carname,
             color: color,
             details: details,
             registration: registration,
@@ -82,6 +82,7 @@ function VehicalForm() {
 
                             <FeatherIcon icon="arrow-left" color="orange" size="30" className="mr-auto m-2 slideImag absolute bg-white rounded-full shadow-xl p-2 top-0   " />
                         </Link>
+
                         <div className=" mt-56 text-center font-bold ">
                             <p className="text-white border-b-4 border-yellow-500 py-6 mx-12 text-6xl"><span className="text-yellow-700">
                                 BUYNING
@@ -97,16 +98,24 @@ function VehicalForm() {
                         </div>
                         <div className="mx-3">
 
-                            <div className=" font-bold p-2  flex">
+                            <div className=" font-bold p-2  justify-between flex">
 
+                                <input value={username} onChange={(e) => setUsername(e.target.value)} className=" text-sm rounded-md border text-gray-600 w-1/2 p-4 font-bold" type="text" placeholder=" UserName:" ></input>
+                                <div className="mt-4">
 
-                                <input value={username} onChange={(e) => setUsername(e.target.value)} className=" text-sm rounded-md border text-gray-600 w-full p-4 font-bold" type="text" placeholder=" UserName:" ></input>
+                                    <p className="text-xs text-yellow-500 font-bold">plz wait for</p>
+                                    <p className="text-xs text-yellow-500 font-bold"> Load Your image</p>
+                                </div>
+                                <div className="border border-6 p-1  rounded-full border-yellow-500 ">
+
+                                    <img src={imageUrl} className="w-12  slideImag h-12 rounded-full" />
+                                </div>
+
                             </div>
                             <div className="  font-bold p-2 w-full flex">
 
 
                                 <input value={phone} onChange={(e) => setPhone(e.target.value)} className="border rounded-md text-sm text-gray-600  w-1/2 p-4 font-bold" type="number" placeholder=" Phone Number:" ></input>
-                                {/*     <img src={imageUrl} alt="aploood file" /> */}
                                 <input value={address} onChange={(e) => setAddress(e.target.value)} className="border rounded-md text-sm ml-1 text-gray-600 w-1/2 p-4 font-bold" type="text" placeholder=" Address:"></input>
                             </div>
 
@@ -171,7 +180,7 @@ function VehicalForm() {
                             <div className="  font-bold p-2 w-full  flex">
 
                                 <select value={carname} onChange={(e) => setCarname(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-1/2 p-4 font-bold" type="text" placeholder="Car name" >
-                                    <option>carname</option>
+                                    <option>Car name</option>
                                     <option>Toyota Corolla</option>
                                     <option> Suzuki Mehran</option>
                                     <option>Honda City </option>
@@ -238,9 +247,8 @@ function VehicalForm() {
 
                                     <button onClick={save} className="info-bg p-4 font-bold w-full info-col rounded-md border  ">Save</button>
                                 </Link>
-                                {/* <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input> */}
-                                <input type="file" onChange={onchange} className="border w-1/2 border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
 
+                                <input type="file" onChange={onchange} className="border w-1/2 border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
 
                             </div>
                         </div>

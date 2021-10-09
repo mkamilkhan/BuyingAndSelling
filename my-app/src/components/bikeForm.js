@@ -1,7 +1,5 @@
-// import React from 'react'
 import React from 'react'
 import { useState } from 'react'
-// import { Link } from 'react-router-dom'
 
 import FeatherIcon from 'feather-icons-react';
 import {
@@ -41,11 +39,11 @@ function BikeForm() {
 
         db.collection("bikeUser").add({
             phonenumber: phone,
-            name: username,
+            username: username,
             addres: address,
             model: model,
             engine: engine,
-            productName: productName,
+            name: productName,
             color: color,
             registration: registration,
             condition: condition,
@@ -76,9 +74,7 @@ function BikeForm() {
             <div className="h-screen">
                 <div className="border font-serif m-12 hight-cover flex shadow-2xl  ">
                     <div className="  relative bike-img  ">
-
                         <Link to="/addProducts">
-
                             <FeatherIcon icon="arrow-left" color="orange" size="30" className="mr-auto m-2 absolute bg-white rounded-full slideImag shadow-xl p-2 top-0   " />
                         </Link>
                         <div className="mt-56 text-center font-bold ">
@@ -95,31 +91,26 @@ function BikeForm() {
                             </p>
                         </div>
                         <div className="mx-3 ">
-
-                            <div className=" font-bold p-2  flex">
-
-
-                                <input value={username} onChange={(e) => setUsername(e.target.value)} className=" text-sm border text-gray-600 w-full p-3 font-bold" type="text" placeholder=" UserName:" ></input>
+                            <div className=" font-bold p-2  justify-between flex">
+                                <input value={username} onChange={(e) => setUsername(e.target.value)} className=" text-sm rounded-md border text-gray-600 w-1/2 p-4 font-bold" type="text" placeholder=" UserName:" ></input>
+                                <div className="mt-4">
+                                    <p className="text-xs text-yellow-500 font-bold">plz wait for</p>
+                                    <p className="text-xs text-yellow-500 font-bold"> Load Your image</p>
+                                </div>
+                                <div className="border border-6 p-1  rounded-full border-yellow-500 ">
+                                    <img src={imageUrl} className="w-12  slideImag h-12 rounded-full" />
+                                </div>
                             </div>
                             <div className="  font-bold p-2 w-full flex">
-
-
                                 <input value={phone} onChange={(e) => setPhone(e.target.value)} className="border text-sm text-gray-600  w-1/2 p-3 font-bold" type="number" placeholder=" Phone Number:"  ></input>
-
                                 <input value={address} onChange={(e) => setAddress(e.target.value)} className="border text-sm ml-1 text-gray-600 w-1/2 p-3 font-bold" type="text" placeholder=" Address:"></input>
                             </div>
-
                             <div className="  font-bold p-2  flex">
-
-
                                 <select value={condition} onChange={(e) => setCondition(e.target.value)} className="border text-sm ml-1  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Condition">
                                     <option>condition</option>
                                     <option>Used</option>
                                     <option>New</option>
-
                                 </select>
-                                {/* <input value={condition} onChange={(e) => setCondition(e.target.value)} className="border ml-1 text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Condition"></input> */}
-
                                 <select value={productName} onChange={(e) => setProductName(e.target.value)} className="border rounded-md text-sm  text-gray-600 w-full p-4 font-bold" type="text" placeholder="Car name" >
                                     <option>bikeName</option>
                                     <option>Honda CB 125F</option>
@@ -132,7 +123,6 @@ function BikeForm() {
                                     <option>RIVO</option>
 
                                 </select>
-
                             </div>
                             <div className="  font-bold p-2  flex">
                                 <select value={engine} onChange={(e) => setEngine(e.target.value)} className="border text-sm ml-1  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Condition">
@@ -142,18 +132,10 @@ function BikeForm() {
                                     <option>125</option>
                                     <option>150</option>
                                     <option>200</option>
-
                                 </select>
-
-                                {/* <input value={engine} onChange={(e) => setEngine(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="Engine:"></input> */}
                                 <input value={price} onChange={(e) => setPrice(e.target.value)} className="border text-sm ml-1 text-gray-600 w-full p-3 font-bold" type="text" placeholder="Price"></input>
-
                             </div>
-
-
-
                             <div className="  font-bold p-2  flex">
-
                                 <select value={registration} onChange={(e) => setRegistration(e.target.value)} className="border text-sm  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Registered in ">
                                     <option>registration</option>
                                     <option>Abbottabad</option>
@@ -179,31 +161,20 @@ function BikeForm() {
                                     <option>Karak</option>
                                     <option>Kalam</option>
                                     <option>Peshawar</option>
-
-
                                 </select>
-                                {/* <input value={registration} onChange={(e) => setRegistration(e.target.value)} className="border text-sm text-gray-600 w-full p-3 font-bold" type="text" placeholder="  Registration:"></input> */}
-
                             </div>
                             <div className="  font-bold p-2  flex">
                                 <textarea value={details} onChange={(e) => setDetails(e.target.value)} className="border text-sm  rounded-md text-gray-600 w-full p-4 font-bold" type="text" placeholder="Details " className="border w-full p-2 text-sm h-32"></textarea>
                             </div>
                             <div className="text-center my-2 ">
-
                                 <Link to="/bikeProducts">
-
                                     <button className="info-bg shadow-2xl info-col p-3 font-bold rounded-md border w-1/2 " onClick={save}>Save</button>
                                 </Link>
-                                {/* {error} */}
-                                {/* <input onChange={(e) => setImage(e.target.value)} value={image} className="border border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input> */}
                                 <input type="file" onChange={onchange} className="border w-1/2 border-yellow-600 rounded p-3 bg-gray-200" placeholder="Image"></input>
-
                             </div>
-                            {/* <input value={file} onChange={(e) => setFile(e.target.value)} className="p-3 border font-bold rounded-md border w-1/2 " ></input> */}
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     )

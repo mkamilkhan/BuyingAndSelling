@@ -1,128 +1,85 @@
 import React from 'react'
-import Assets from '../assets/mobile.jpeg';
 import { db, storage } from "../firebaseData"
 import { useState, useEffect } from 'react'
 import SearcHeader from './searcHeader';
-// import SideBar from './sideBar';
 import FeatherIcon from 'feather-icons-react';
-
 import { Link } from 'react-router-dom'
 
 function MobileCarts() {
     const [users, setUsers] = useState([]);
     const [searchValue, setSearchValue] = useState("");
-
     useEffect(() => {
         db.collection('mobilUsers').onSnapshot((resp) => {
-
             const list = resp.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
             setUsers(list);
             console.log(list);
         })
     }, []);
     const filterNames = (res) => {
-
-
-        // return res.price1.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
-
+        return res.name.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1;
     };
     return (
         <div className="w-full">
             <div className="  w-full  p-6">
                 <div>
                     <Link to="/home">
-
                         <FeatherIcon Link to="/login" icon="arrow-left" color="orange" size="30" className=" m-4 absolute bg-white rounded-full shadow-xl p-1    " />
                     </Link>
                 </div>
                 <SearcHeader className="" onSearch={setSearchValue} value={searchValue} />
-
             </div>
             <div className="flex " >
                 <div>
-
                     <div className=" w-64 mt-6 ">
                         <div className="">
                             <div className="justify-around   ">
-
                                 <Link to="/addProducts">
                                     <p className="p-12 darks-cols border-b border-yellow-700">Add Products</p>
                                 </Link>
-
                                 <Link to="/vehicalProducts">
-
                                     <p className="p-12 darks-cols border-b border-yellow-700">Vehicles</p>
                                 </Link>
-
                                 <Link to="/bikeProducts">
                                     <p className=" darks-cols border-b p-12 border-yellow-700 ">Bikes</p>
                                 </Link>
                             </div>
-                            <div className="  w-full justify-around  ">
+                            <div className="w-full justify-around  ">
                                 <Link to="/mobileProducts">
                                     <p className=" darks-cols border-b p-12 border-yellow-700 ">Mobile</p>
                                 </Link>
                             </div>
-                            <div className="   w-full justify-around  ">
+                            <div className="w-full justify-around  ">
                                 <Link to="/furnitureProducts">
                                     <p className=" darks-cols border-b p-12 border-gray-600" >Furniture</p>
                                 </Link>
-
-
-
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div className="flex flex-wrap">
-
                     {
-                        users.map((user, i) =>
-
+                        users.filter(filterNames).map((user, i) =>
                             <div key={i} className=" m-3">
                                 <div className="w-64">
-
                                     <Link to={`/mobileDetails/:${user.id}`} exact>
                                         <div className="relative flex justify-end w-full ">
-
-
                                             <img src={user.image} id="slideImage" className=" rounded w-full h-48"></img>
-
                                             <FeatherIcon size="25" className="p-1 mt-1 top-0  mx-2 border rounded-full bg-gray-100 absolute shadow-xl " icon="file-minus" color="rgb(226, 98, 13)" />
                                         </div>
                                     </Link>
-
                                     <div className="text-xs py-4 p-1  flex-grow rounded font-bold text-gray-700 border shadow-md">
                                         <div className=" justify-between flex">
-                                            {/* <p>Phone: {user.phonenumber}</p> */}
-                                            {/* <p>Model: {user.model1}</p> */}
-                                        </div>
-
-
-                                        <div className=" justify-between flex">
-                                            {/* <p>model: {user.model} </p> */}
-
-                                            <p>ReleaseDate: {user.Release} </p>
-
+                                            <p>model: {user.name} </p>
                                             <p>color: {user.color} </p>
                                         </div>
                                         <div className=" justify-between flex">
-
                                             <p>price: {user.price} </p>
-
                                         </div>
                                         <div className=" justify-between flex">
                                             <p>Os: {user.os} </p>
-
                                             <p>Cpu: {user.cpu} </p>
-
                                         </div>
-
-                                        {/* <p>Address: {user.addres} </p> */}
-                                        {/* <p>Company: {user.Company1} </p> */}
                                         <p>Memory: {user.memory}</p>
-
                                     </div>
                                 </div>
                             </div>

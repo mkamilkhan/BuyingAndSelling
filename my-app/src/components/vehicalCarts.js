@@ -97,7 +97,7 @@ function VehicalCarts() {
                                     </div>
 
                                     {/* <p>Address: {user.addres} </p> */}
-                                    <p>Car: {user.carname} </p>
+                                    <p>Car: {user.name} </p>
                                     <p >Registration: {user.registration}</p>
 
                                 </div>

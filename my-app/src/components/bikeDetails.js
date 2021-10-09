@@ -43,14 +43,14 @@ function BikeDetails() {
 
                                         <p className="font-bold my-2 text-yellow-600 text-3xl">Rs. {user.price}</p>
 
-                                        <p className="font-bold">{user.bikeName} </p>
+                                        <p className="font-bold">{user.name} </p>
 
                                     </div>
                                     <div className="rounded  h-64">
                                         <p className="font-bold m-2 text-yellow-600 text-2xl">Seller Information</p>
                                         <div className="m-2 text-sm">
 
-                                            <p className="my-1 font-bold ">Name: {user.name}</p>
+                                            <p className="my-1 font-bold ">Name: {user.username}</p>
 
                                             <p className="my-1 font-bold">Contect: {user.phonenumber}</p>
                                             <p className="font-bold">Address" {user.addres} </p>
@@ -80,7 +80,7 @@ function BikeDetails() {
                                     <div className=" w-1/2 justify-between  flex">
                                         <p className="font-bold text-yellow-600">
                                             BIKE</p>
-                                        <p>{user.bikeName}</p>
+                                        <p>{user.name}</p>
                                     </div>
 
                                     <div className=" w-1/2  justify-between  flex">

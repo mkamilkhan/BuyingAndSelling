@@ -50,7 +50,7 @@ function VehicalDetails() {
                                         <p className="font-bold text-yellow-600 text-3xl">Rs. {user.price}</p>
 
                                         <p className="my-1">{user.model}- {user.kmdvin}Km</p>
-                                        <p>{user.carname} </p>
+                                        <p>{user.name} </p>
                                         <p>{user.addres} </p>
 
                                     </div>
@@ -58,7 +58,7 @@ function VehicalDetails() {
                                         <p className="font-bold  text-yellow-600 text-2xl">Seller Information</p>
                                         <div className=" my-1 text-sm">
 
-                                            <p>Name: {user.name}</p>
+                                            <p>Name: {user.username}</p>
 
                                             <p className="my-1 ">Contect: {user.phonenumber}</p>
                                             <p>Address" {user.addres} </p>
@@ -94,7 +94,7 @@ function VehicalDetails() {
 
                                         <p className="font-bold text-yellow-600">
                                             Model</p>
-                                        <p>{user.carname}</p>
+                                        <p>{user.name}</p>
                                     </div>
                                 </div>
                                 <div className=" w-full p-4 border   flex">
